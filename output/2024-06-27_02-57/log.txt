@@ -1,0 +1,86 @@
+config:  {'train_file': 'F:/.python/NLP/Datasets/ROCO/train/data.csv', 'image_root': 'F:/.python/NLP/Datasets/ROCO/train/images', 'text_config': 'bert-base-uncased', 'bert_config': 'configs/config_bert.json', 'vit_mae_pretrain_path': 'F:/.python/NLP/Compact-MUMC/models/saved/vit/deit_base_patch16_224-b5f2ef4d.pth', 'image_res': 256, 'vision_width': 768, 'embed_dim': 256, 'batch_size': 128, 'temp': 0.07, 'mlm_probability': 0.15, 'queue_size': 65536, 'momentum': 0.995, 'alpha': 0.4, 'weight_decay': 0.05, 'power_decay': -0.1, 'init_lr': 0.0001, 'min_lr': 1e-06, 'warmup_lr': 1e-06, 'lr_decay_rate': 0.9, 'max_epoch': 20, 'warmup_steps': 3000}
+args:  Namespace(config='./configs/pretrain.yaml', checkpoint='./output/2024-06-26_21-33/med_pretrain_00.pth', output_dir='./output\\2024-06-27_02-57', device='cuda', seed=42, world_size=1, dist_url='env://', distributed=False)
+Not using distributed mode
+Creating dataset
+number of training samples: 65419
+Creating model
+reshape position embedding from 196 to 256
+missing_keys = [], unexpected_keys = ['head.weight', 'head.bias']
+load checkpoint from ./output/2024-06-26_21-33/med_pretrain_00.pth
+missing_keys = [], unexpected_keys = []
+Start training
+Train Epoch: [0]  [  0/511]  eta: 3:08:06  lr: 0.000001  loss_mlm: 1.6250  loss_ita: 4.7520  loss_itm: 0.2754  time: 22.0877  data: 5.0042  max mem: 17174
+Train Epoch: [0]  [ 50/511]  eta: 1:33:21  lr: 0.000003  loss_mlm: 1.3203  loss_ita: 4.6471  loss_itm: 0.2539  time: 11.5206  data: 0.0004  max mem: 18029
+Train Epoch: [0]  [100/511]  eta: 1:23:00  lr: 0.000004  loss_mlm: 1.5547  loss_ita: 4.9245  loss_itm: 0.2910  time: 12.2738  data: 0.0003  max mem: 18029
+Train Epoch: [0]  [150/511]  eta: 1:11:52  lr: 0.000006  loss_mlm: 1.5938  loss_ita: 4.7092  loss_itm: 0.2490  time: 11.5523  data: 0.0001  max mem: 18029
+Train Epoch: [0]  [200/511]  eta: 1:02:05  lr: 0.000008  loss_mlm: 1.4062  loss_ita: 4.8278  loss_itm: 0.2285  time: 11.5833  data: 0.0002  max mem: 18029
+Train Epoch: [0]  [250/511]  eta: 0:51:59  lr: 0.000009  loss_mlm: 1.6172  loss_ita: 4.6366  loss_itm: 0.2334  time: 12.0511  data: 0.0001  max mem: 18029
+Train Epoch: [0]  [300/511]  eta: 0:42:04  lr: 0.000011  loss_mlm: 1.7422  loss_ita: 4.7650  loss_itm: 0.2266  time: 11.6290  data: 0.0001  max mem: 18029
+Train Epoch: [0]  [350/511]  eta: 0:32:09  lr: 0.000013  loss_mlm: 1.4844  loss_ita: 4.4880  loss_itm: 0.1846  time: 12.5291  data: 0.0002  max mem: 18029
+Train Epoch: [0]  [400/511]  eta: 0:22:04  lr: 0.000014  loss_mlm: 1.7188  loss_ita: 4.8123  loss_itm: 0.1904  time: 11.5054  data: 0.0000  max mem: 18029
+Train Epoch: [0]  [450/511]  eta: 0:12:09  lr: 0.000016  loss_mlm: 1.6562  loss_ita: 4.4165  loss_itm: 0.1465  time: 12.0018  data: 0.0001  max mem: 18030
+Train Epoch: [0]  [500/511]  eta: 0:02:11  lr: 0.000018  loss_mlm: 1.7500  loss_ita: 4.8522  loss_itm: 0.1543  time: 12.0011  data: 0.0002  max mem: 18030
+Train Epoch: [0]  [510/511]  eta: 0:00:11  lr: 0.000018  loss_mlm: 1.8125  loss_ita: 5.7623  loss_itm: 0.2734  time: 12.0449  data: 0.0002  max mem: 18030
+Train Epoch: [0] Total time: 1:41:40 (11.9389 s / it)
+Averaged stats: lr: 0.000009  loss_mlm: 1.557791  loss_ita: 4.593081  loss_itm: 0.214750
+Train Epoch: [1]  [  0/511]  eta: 2:20:27  lr: 0.000090  loss_mlm: 1.7969  loss_ita: 5.3942  loss_itm: 0.2559  time: 16.4912  data: 4.5370  max mem: 18452
+Train Epoch: [1]  [ 50/511]  eta: 1:35:48  lr: 0.000090  loss_mlm: 1.9609  loss_ita: 5.6728  loss_itm: 0.3047  time: 12.2285  data: 0.0002  max mem: 18465
+Train Epoch: [1]  [100/511]  eta: 1:25:53  lr: 0.000090  loss_mlm: 1.8125  loss_ita: 5.5974  loss_itm: 0.2344  time: 12.6622  data: 0.0002  max mem: 18465
+Train Epoch: [1]  [150/511]  eta: 1:15:05  lr: 0.000090  loss_mlm: 1.9375  loss_ita: 5.7097  loss_itm: 0.2969  time: 12.2141  data: 0.0001  max mem: 18465
+Train Epoch: [1]  [200/511]  eta: 1:04:28  lr: 0.000090  loss_mlm: 1.8906  loss_ita: 5.3844  loss_itm: 0.2656  time: 12.2270  data: 0.0003  max mem: 18465
+Train Epoch: [1]  [250/511]  eta: 0:54:16  lr: 0.000090  loss_mlm: 2.1250  loss_ita: 5.0020  loss_itm: 0.2891  time: 12.6362  data: 0.0000  max mem: 18465
+Train Epoch: [1]  [300/511]  eta: 0:43:49  lr: 0.000090  loss_mlm: 1.9453  loss_ita: 4.5201  loss_itm: 0.2412  time: 12.5332  data: 0.0001  max mem: 18465
+Train Epoch: [1]  [350/511]  eta: 0:33:23  lr: 0.000090  loss_mlm: 1.8984  loss_ita: 4.9775  loss_itm: 0.2988  time: 12.5282  data: 0.0001  max mem: 18466
+Train Epoch: [1]  [400/511]  eta: 0:22:59  lr: 0.000090  loss_mlm: 2.1250  loss_ita: 5.0311  loss_itm: 0.2383  time: 12.1689  data: 0.0002  max mem: 18466
+Train Epoch: [1]  [450/511]  eta: 0:12:37  lr: 0.000090  loss_mlm: 1.9531  loss_ita: 5.4617  loss_itm: 0.2930  time: 12.5433  data: 0.0002  max mem: 18466
+Train Epoch: [1]  [500/511]  eta: 0:02:16  lr: 0.000090  loss_mlm: 2.0000  loss_ita: 5.7324  loss_itm: 0.2393  time: 12.5147  data: 0.0001  max mem: 18466
+Train Epoch: [1]  [510/511]  eta: 0:00:12  lr: 0.000090  loss_mlm: 2.1875  loss_ita: 5.8653  loss_itm: 0.2930  time: 12.6620  data: 0.0002  max mem: 18466
+Train Epoch: [1] Total time: 1:46:03 (12.4530 s / it)
+Averaged stats: lr: 0.000090  loss_mlm: 1.954623  loss_ita: 5.412575  loss_itm: 0.282844
+Train Epoch: [2]  [  0/511]  eta: 2:25:18  lr: 0.000081  loss_mlm: 2.3594  loss_ita: 5.6408  loss_itm: 0.2637  time: 17.0610  data: 4.8058  max mem: 18466
+Train Epoch: [2]  [ 50/511]  eta: 1:39:07  lr: 0.000081  loss_mlm: 2.1719  loss_ita: 5.9137  loss_itm: 0.2520  time: 12.5007  data: 0.0003  max mem: 18466
+Train Epoch: [2]  [100/511]  eta: 1:29:35  lr: 0.000081  loss_mlm: 2.3594  loss_ita: 5.7640  loss_itm: 0.2490  time: 13.6018  data: 0.0002  max mem: 18466
+Train Epoch: [2]  [150/511]  eta: 1:17:43  lr: 0.000081  loss_mlm: 2.2188  loss_ita: 5.6337  loss_itm: 0.3066  time: 12.5386  data: 0.0002  max mem: 18466
+Train Epoch: [2]  [200/511]  eta: 1:07:18  lr: 0.000081  loss_mlm: 2.0938  loss_ita: 5.7784  loss_itm: 0.2949  time: 12.7128  data: 0.0002  max mem: 18466
+Train Epoch: [2]  [250/511]  eta: 0:56:29  lr: 0.000081  loss_mlm: 2.1250  loss_ita: 5.6734  loss_itm: 0.3008  time: 13.5060  data: 0.0003  max mem: 18466
+Train Epoch: [2]  [300/511]  eta: 0:45:31  lr: 0.000081  loss_mlm: 2.2500  loss_ita: 5.4645  loss_itm: 0.2119  time: 12.5891  data: 0.0004  max mem: 18466
+Train Epoch: [2]  [350/511]  eta: 0:34:50  lr: 0.000081  loss_mlm: 2.3438  loss_ita: 5.3408  loss_itm: 0.2285  time: 13.2122  data: 0.0004  max mem: 18466
+Train Epoch: [2]  [400/511]  eta: 0:23:57  lr: 0.000081  loss_mlm: 2.3125  loss_ita: 5.3699  loss_itm: 0.2676  time: 13.0726  data: 0.0002  max mem: 18466
+Train Epoch: [2]  [450/511]  eta: 0:13:09  lr: 0.000081  loss_mlm: 2.3438  loss_ita: 5.7446  loss_itm: 0.3164  time: 12.4246  data: 0.0002  max mem: 18466
+Train Epoch: [2]  [500/511]  eta: 0:02:22  lr: 0.000081  loss_mlm: 2.3594  loss_ita: 5.6118  loss_itm: 0.2656  time: 13.5456  data: 0.0003  max mem: 18466
+Train Epoch: [2]  [510/511]  eta: 0:00:12  lr: 0.000081  loss_mlm: 2.1406  loss_ita: 5.7406  loss_itm: 0.2734  time: 13.3160  data: 0.0004  max mem: 18466
+Train Epoch: [2] Total time: 1:50:29 (12.9731 s / it)
+Averaged stats: lr: 0.000081  loss_mlm: 2.229498  loss_ita: 5.688632  loss_itm: 0.280040
+Train Epoch: [3]  [  0/511]  eta: 2:37:18  lr: 0.000073  loss_mlm: 2.2188  loss_ita: 5.5738  loss_itm: 0.2871  time: 18.4712  data: 4.4379  max mem: 18466
+Train Epoch: [3]  [ 50/511]  eta: 1:37:51  lr: 0.000073  loss_mlm: 2.1875  loss_ita: 5.4731  loss_itm: 0.2266  time: 12.7181  data: 0.0002  max mem: 18471
+Train Epoch: [3]  [100/511]  eta: 1:27:42  lr: 0.000073  loss_mlm: 2.6250  loss_ita: 5.4454  loss_itm: 0.2598  time: 12.6790  data: 0.0001  max mem: 18471
+Train Epoch: [3]  [150/511]  eta: 1:17:11  lr: 0.000073  loss_mlm: 1.9844  loss_ita: 5.5554  loss_itm: 0.2676  time: 12.8169  data: 0.0002  max mem: 18471
+Train Epoch: [3]  [200/511]  eta: 1:06:46  lr: 0.000073  loss_mlm: 2.1875  loss_ita: 5.5092  loss_itm: 0.2754  time: 12.8812  data: 0.0002  max mem: 18471
+Train Epoch: [3]  [250/511]  eta: 0:55:59  lr: 0.000073  loss_mlm: 2.3594  loss_ita: 5.6010  loss_itm: 0.2793  time: 13.1650  data: 0.0002  max mem: 18471
+Train Epoch: [3]  [300/511]  eta: 0:45:22  lr: 0.000073  loss_mlm: 2.4688  loss_ita: 5.6628  loss_itm: 0.2656  time: 13.0310  data: 0.0000  max mem: 18471
+Train Epoch: [3]  [350/511]  eta: 0:34:38  lr: 0.000073  loss_mlm: 2.4844  loss_ita: 5.8764  loss_itm: 0.2969  time: 12.9205  data: 0.0001  max mem: 18471
+Train Epoch: [3]  [400/511]  eta: 0:23:52  lr: 0.000073  loss_mlm: 2.1719  loss_ita: 5.8593  loss_itm: 0.2578  time: 12.6654  data: 0.0001  max mem: 18471
+Train Epoch: [3]  [450/511]  eta: 0:13:06  lr: 0.000073  loss_mlm: 2.2969  loss_ita: 5.6950  loss_itm: 0.2812  time: 12.7794  data: 0.0003  max mem: 18471
+Train Epoch: [3]  [500/511]  eta: 0:02:21  lr: 0.000073  loss_mlm: 2.2812  loss_ita: 5.8484  loss_itm: 0.2617  time: 12.8791  data: 0.0001  max mem: 18471
+Train Epoch: [3]  [510/511]  eta: 0:00:12  lr: 0.000073  loss_mlm: 2.1875  loss_ita: 5.4798  loss_itm: 0.2070  time: 12.8010  data: 0.0002  max mem: 18471
+Train Epoch: [3] Total time: 1:49:54 (12.9053 s / it)
+Averaged stats: lr: 0.000073  loss_mlm: 2.295530  loss_ita: 5.655418  loss_itm: 0.269952
+Train Epoch: [4]  [  0/511]  eta: 2:22:21  lr: 0.000066  loss_mlm: 2.3438  loss_ita: 5.8062  loss_itm: 0.2734  time: 16.7154  data: 4.4700  max mem: 18471
+Train Epoch: [4]  [ 50/511]  eta: 1:38:35  lr: 0.000066  loss_mlm: 2.1094  loss_ita: 5.8586  loss_itm: 0.2754  time: 12.4769  data: 0.0001  max mem: 18471
+Train Epoch: [4]  [100/511]  eta: 1:29:08  lr: 0.000066  loss_mlm: 2.4062  loss_ita: 5.7835  loss_itm: 0.2598  time: 13.4423  data: 0.0004  max mem: 18471
+Train Epoch: [4]  [150/511]  eta: 1:17:34  lr: 0.000066  loss_mlm: 2.3281  loss_ita: 5.7621  loss_itm: 0.2227  time: 12.4897  data: 0.0004  max mem: 18471
+Train Epoch: [4]  [200/511]  eta: 1:08:04  lr: 0.000066  loss_mlm: 2.1406  loss_ita: 5.7168  loss_itm: 0.2402  time: 12.7569  data: 0.0003  max mem: 18471
+Train Epoch: [4]  [250/511]  eta: 0:57:06  lr: 0.000066  loss_mlm: 2.3750  loss_ita: 5.6313  loss_itm: 0.2539  time: 13.5190  data: 0.0003  max mem: 18471
+Train Epoch: [4]  [300/511]  eta: 0:46:03  lr: 0.000066  loss_mlm: 2.1250  loss_ita: 5.6217  loss_itm: 0.2471  time: 12.6907  data: 0.0003  max mem: 18471
+Train Epoch: [4]  [350/511]  eta: 0:35:10  lr: 0.000066  loss_mlm: 2.0938  loss_ita: 5.6778  loss_itm: 0.2656  time: 13.6269  data: 0.0003  max mem: 18471
+Train Epoch: [4]  [400/511]  eta: 0:24:10  lr: 0.000066  loss_mlm: 2.3750  loss_ita: 5.5625  loss_itm: 0.2422  time: 12.8412  data: 0.0003  max mem: 18471
+Train Epoch: [4]  [450/511]  eta: 0:13:18  lr: 0.000066  loss_mlm: 2.3438  loss_ita: 5.6791  loss_itm: 0.2305  time: 12.6380  data: 0.0003  max mem: 18471
+Train Epoch: [4]  [500/511]  eta: 0:02:24  lr: 0.000066  loss_mlm: 2.5000  loss_ita: 5.7595  loss_itm: 0.2461  time: 13.5254  data: 0.0002  max mem: 18471
+Train Epoch: [4]  [510/511]  eta: 0:00:13  lr: 0.000066  loss_mlm: 2.4062  loss_ita: 5.8975  loss_itm: 0.2715  time: 13.7287  data: 0.0001  max mem: 18471
+Train Epoch: [4] Total time: 1:51:51 (13.1332 s / it)
+Averaged stats: lr: 0.000066  loss_mlm: 2.342710  loss_ita: 5.703452  loss_itm: 0.259443
+Train Epoch: [5]  [  0/511]  eta: 2:42:13  lr: 0.000059  loss_mlm: 2.3750  loss_ita: 6.0419  loss_itm: 0.2676  time: 19.0484  data: 4.8569  max mem: 18471
+Train Epoch: [5]  [ 50/511]  eta: 1:43:08  lr: 0.000059  loss_mlm: 2.2656  loss_ita: 6.0062  loss_itm: 0.2520  time: 13.3917  data: 0.0002  max mem: 18471
+Train Epoch: [5]  [100/511]  eta: 1:30:57  lr: 0.000059  loss_mlm: 2.6250  loss_ita: 5.8011  loss_itm: 0.2207  time: 13.0212  data: 0.0002  max mem: 18471
+Train Epoch: [5]  [150/511]  eta: 1:19:10  lr: 0.000059  loss_mlm: 2.2969  loss_ita: 5.5993  loss_itm: 0.2520  time: 12.6725  data: 0.0001  max mem: 18472
+Train Epoch: [5]  [200/511]  eta: 1:07:47  lr: 0.000059  loss_mlm: 2.4219  loss_ita: 5.5447  loss_itm: 0.2559  time: 12.7526  data: 0.0001  max mem: 18472

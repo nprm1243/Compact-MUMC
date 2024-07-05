@@ -1,0 +1,668 @@
+config:  {'rad': {'train_file': ['/mnt/sda/lpf/data/vqa/data_RAD/trainset.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_RAD/testset.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_RAD/answer_all_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_RAD/images/'}, 'pathvqa': {'train_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_train.json', '/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_PathVQA/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_PathVQA/images/'}, 'slake': {'train_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_train.json', '/mnt/sda/lpf/data/vqa/data_Slake/en/slake_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_Slake/en/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_Slake/imgs/'}, 'med2019': {'train_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_train.json', '/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_valid.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/vqa_med/2019/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/vqa_med/2019/images/'}, 'image_res': 384, 'batch_size_train': 8, 'batch_size_test': 4, 'k_test': 128, 'alpha': 0.4, 'distill': True, 'warm_up': True, 'eos': '[SEP]', 'bert_config': 'configs/config_bert.json', 'init_lr': 2e-05, 'weight_decay': 0.05, 'power_decay': -0.1, 'min_lr': 1e-08, 'max_epoch': 10}
+args:  Namespace(dataset_use='rad', is_save_path=False, checkpoint='./output/2024-06-27_12-44/med_pretrain_19.pth', output_suffix='/rad_19_1', output_dir='./output/vqa/rad/rad_19_1', evaluate=False, text_encoder='bert-base-uncased', text_decoder='bert-base-uncased', device='cuda', seed=42, world_size=1, dist_url='env://', distributed=False, result_dir='./output/vqa/rad/rad_19_1\\result')
+config:  {'rad': {'train_file': ['/mnt/sda/lpf/data/vqa/data_RAD/trainset.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_RAD/testset.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_RAD/answer_all_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_RAD/images/'}, 'pathvqa': {'train_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_train.json', '/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_PathVQA/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_PathVQA/images/'}, 'slake': {'train_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_train.json', '/mnt/sda/lpf/data/vqa/data_Slake/en/slake_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_Slake/en/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_Slake/imgs/'}, 'med2019': {'train_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_train.json', '/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_valid.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/vqa_med/2019/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/vqa_med/2019/images/'}, 'image_res': 384, 'batch_size_train': 8, 'batch_size_test': 4, 'k_test': 128, 'alpha': 0.4, 'distill': True, 'warm_up': True, 'eos': '[SEP]', 'bert_config': 'configs/config_bert.json', 'init_lr': 2e-05, 'weight_decay': 0.05, 'power_decay': -0.1, 'min_lr': 1e-08, 'max_epoch': 10}
+args:  Namespace(dataset_use='rad', is_save_path=False, checkpoint='./output/2024-06-27_12-44/med_pretrain_19.pth', output_suffix='/rad_19_1', output_dir='./output/vqa/rad/rad_19_1', evaluate=False, text_encoder='bert-base-uncased', text_decoder='bert-base-uncased', device='cuda', seed=42, world_size=1, dist_url='env://', distributed=False, result_dir='./output/vqa/rad/rad_19_1\\result')
+train dataset size:  1793
+test dataset size:  451
+Creating model
+reshape position embedding from 256 to 576
+reshape position embedding from 256 to 576
+load checkpoint from ./output/2024-06-27_12-44/med_pretrain_19.pth
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['temp', 'image_queue', 'text_queue', 'queue_ptr', 'vision_proj.weight', 'vision_proj.bias', 'text_proj.weight', 'text_proj.bias', 'vision_proj_m.weight', 'vision_proj_m.bias', 'text_proj_m.weight', 'text_proj_m.bias', 'itm_head.0.weight', 'itm_head.0.bias', 'itm_head.1.weight', 'itm_head.1.bias', 'itm_head.3.weight', 'itm_head.3.bias'])
+
+Start training
+
+config:  {'rad': {'train_file': ['/mnt/sda/lpf/data/vqa/data_RAD/trainset.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_RAD/testset.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_RAD/answer_all_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_RAD/images/'}, 'pathvqa': {'train_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_train.json', '/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_PathVQA/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_PathVQA/images/'}, 'slake': {'train_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_train.json', '/mnt/sda/lpf/data/vqa/data_Slake/en/slake_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_Slake/en/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_Slake/imgs/'}, 'med2019': {'train_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_train.json', '/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_valid.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/vqa_med/2019/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/vqa_med/2019/images/'}, 'image_res': 384, 'batch_size_train': 8, 'batch_size_test': 4, 'k_test': 128, 'alpha': 0.4, 'distill': True, 'warm_up': True, 'eos': '[SEP]', 'bert_config': 'configs/config_bert.json', 'init_lr': 2e-05, 'weight_decay': 0.05, 'power_decay': -0.1, 'min_lr': 1e-08, 'max_epoch': 10}
+args:  Namespace(dataset_use='rad', is_save_path=False, checkpoint='./output/2024-06-27_12-44/med_pretrain_19.pth', output_suffix='/rad_19_1', output_dir='./output/vqa/rad/rad_19_1', evaluate=False, text_encoder='bert-base-uncased', text_decoder='bert-base-uncased', device='cuda', seed=42, world_size=1, dist_url='env://', distributed=False, result_dir='./output/vqa/rad/rad_19_1\\result')
+train dataset size:  1793
+test dataset size:  451
+Creating model
+reshape position embedding from 256 to 576
+reshape position embedding from 256 to 576
+load checkpoint from ./output/2024-06-27_12-44/med_pretrain_19.pth
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['temp', 'image_queue', 'text_queue', 'queue_ptr', 'vision_proj.weight', 'vision_proj.bias', 'text_proj.weight', 'text_proj.bias', 'vision_proj_m.weight', 'vision_proj_m.bias', 'text_proj_m.weight', 'text_proj_m.bias', 'itm_head.0.weight', 'itm_head.0.bias', 'itm_head.1.weight', 'itm_head.1.bias', 'itm_head.3.weight', 'itm_head.3.bias'])
+
+Start training
+
+config:  {'rad': {'train_file': ['/mnt/sda/lpf/data/vqa/data_RAD/trainset.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_RAD/testset.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_RAD/answer_all_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_RAD/images/'}, 'pathvqa': {'train_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_train.json', '/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_PathVQA/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_PathVQA/images/'}, 'slake': {'train_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_train.json', '/mnt/sda/lpf/data/vqa/data_Slake/en/slake_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_Slake/en/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_Slake/imgs/'}, 'med2019': {'train_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_train.json', '/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_valid.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/vqa_med/2019/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/vqa_med/2019/images/'}, 'image_res': 384, 'batch_size_train': 8, 'batch_size_test': 4, 'k_test': 128, 'alpha': 0.4, 'distill': True, 'warm_up': True, 'eos': '[SEP]', 'bert_config': 'configs/config_bert.json', 'init_lr': 2e-05, 'weight_decay': 0.05, 'power_decay': -0.1, 'min_lr': 1e-08, 'max_epoch': 10}
+args:  Namespace(dataset_use='rad', is_save_path=False, checkpoint='./output/2024-06-27_12-44/med_pretrain_19.pth', output_suffix='/rad_19_1', output_dir='./output/vqa/rad/rad_19_1', evaluate=False, text_encoder='bert-base-uncased', text_decoder='bert-base-uncased', device='cuda', seed=42, world_size=1, dist_url='env://', distributed=False, result_dir='./output/vqa/rad/rad_19_1\\result')
+train dataset size:  1793
+test dataset size:  451
+Creating model
+reshape position embedding from 256 to 576
+reshape position embedding from 256 to 576
+load checkpoint from ./output/2024-06-27_12-44/med_pretrain_19.pth
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['temp', 'image_queue', 'text_queue', 'queue_ptr', 'vision_proj.weight', 'vision_proj.bias', 'text_proj.weight', 'text_proj.bias', 'vision_proj_m.weight', 'vision_proj_m.bias', 'text_proj_m.weight', 'text_proj_m.bias', 'itm_head.0.weight', 'itm_head.0.bias', 'itm_head.1.weight', 'itm_head.1.bias', 'itm_head.3.weight', 'itm_head.3.bias'])
+
+Start training
+
+config:  {'rad': {'train_file': ['/mnt/sda/lpf/data/vqa/data_RAD/trainset.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_RAD/testset.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_RAD/answer_all_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_RAD/images/'}, 'pathvqa': {'train_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_train.json', '/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_PathVQA/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_PathVQA/images/'}, 'slake': {'train_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_train.json', '/mnt/sda/lpf/data/vqa/data_Slake/en/slake_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_Slake/en/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_Slake/imgs/'}, 'med2019': {'train_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_train.json', '/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_valid.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/vqa_med/2019/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/vqa_med/2019/images/'}, 'image_res': 384, 'batch_size_train': 8, 'batch_size_test': 4, 'k_test': 128, 'alpha': 0.4, 'distill': True, 'warm_up': True, 'eos': '[SEP]', 'bert_config': 'configs/config_bert.json', 'init_lr': 2e-05, 'weight_decay': 0.05, 'power_decay': -0.1, 'min_lr': 1e-08, 'max_epoch': 10}
+args:  Namespace(dataset_use='rad', is_save_path=False, checkpoint='./output/2024-06-27_12-44/med_pretrain_19.pth', output_suffix='/rad_19_1', output_dir='./output/vqa/rad/rad_19_1', evaluate=False, text_encoder='bert-base-uncased', text_decoder='bert-base-uncased', device='cuda', seed=42, world_size=1, dist_url='env://', distributed=False, result_dir='./output/vqa/rad/rad_19_1\\result')
+train dataset size:  1793
+test dataset size:  451
+Creating model
+reshape position embedding from 256 to 576
+reshape position embedding from 256 to 576
+load checkpoint from ./output/2024-06-27_12-44/med_pretrain_19.pth
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['temp', 'image_queue', 'text_queue', 'queue_ptr', 'vision_proj.weight', 'vision_proj.bias', 'text_proj.weight', 'text_proj.bias', 'vision_proj_m.weight', 'vision_proj_m.bias', 'text_proj_m.weight', 'text_proj_m.bias', 'itm_head.0.weight', 'itm_head.0.bias', 'itm_head.1.weight', 'itm_head.1.bias', 'itm_head.3.weight', 'itm_head.3.bias'])
+
+Start training
+
+config:  {'rad': {'train_file': ['/mnt/sda/lpf/data/vqa/data_RAD/trainset.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_RAD/testset.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_RAD/answer_all_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_RAD/images/'}, 'pathvqa': {'train_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_train.json', '/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_PathVQA/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_PathVQA/images/'}, 'slake': {'train_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_train.json', '/mnt/sda/lpf/data/vqa/data_Slake/en/slake_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_Slake/en/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_Slake/imgs/'}, 'med2019': {'train_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_train.json', '/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_valid.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/vqa_med/2019/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/vqa_med/2019/images/'}, 'image_res': 384, 'batch_size_train': 8, 'batch_size_test': 4, 'k_test': 128, 'alpha': 0.4, 'distill': True, 'warm_up': True, 'eos': '[SEP]', 'bert_config': 'configs/config_bert.json', 'init_lr': 2e-05, 'weight_decay': 0.05, 'power_decay': -0.1, 'min_lr': 1e-08, 'max_epoch': 10}
+args:  Namespace(dataset_use='rad', is_save_path=False, checkpoint='./output/2024-06-27_12-44/med_pretrain_19.pth', output_suffix='/rad_19_1', output_dir='./output/vqa/rad/rad_19_1', evaluate=False, text_encoder='bert-base-uncased', text_decoder='bert-base-uncased', device='cuda', seed=42, world_size=1, dist_url='env://', distributed=False, result_dir='./output/vqa/rad/rad_19_1\\result')
+train dataset size:  1793
+test dataset size:  451
+Creating model
+reshape position embedding from 256 to 576
+reshape position embedding from 256 to 576
+load checkpoint from ./output/2024-06-27_12-44/med_pretrain_19.pth
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['temp', 'image_queue', 'text_queue', 'queue_ptr', 'vision_proj.weight', 'vision_proj.bias', 'text_proj.weight', 'text_proj.bias', 'vision_proj_m.weight', 'vision_proj_m.bias', 'text_proj_m.weight', 'text_proj_m.bias', 'itm_head.0.weight', 'itm_head.0.bias', 'itm_head.1.weight', 'itm_head.1.bias', 'itm_head.3.weight', 'itm_head.3.bias'])
+
+Start training
+
+config:  {'rad': {'train_file': ['/mnt/sda/lpf/data/vqa/data_RAD/trainset.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_RAD/testset.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_RAD/answer_all_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_RAD/images/'}, 'pathvqa': {'train_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_train.json', '/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_PathVQA/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_PathVQA/images/'}, 'slake': {'train_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_train.json', '/mnt/sda/lpf/data/vqa/data_Slake/en/slake_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_Slake/en/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_Slake/imgs/'}, 'med2019': {'train_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_train.json', '/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_valid.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/vqa_med/2019/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/vqa_med/2019/images/'}, 'image_res': 384, 'batch_size_train': 8, 'batch_size_test': 4, 'k_test': 128, 'alpha': 0.4, 'distill': True, 'warm_up': True, 'eos': '[SEP]', 'bert_config': 'configs/config_bert.json', 'init_lr': 2e-05, 'weight_decay': 0.05, 'power_decay': -0.1, 'min_lr': 1e-08, 'max_epoch': 10}
+args:  Namespace(dataset_use='rad', is_save_path=False, checkpoint='./output/2024-06-27_12-44/med_pretrain_19.pth', output_suffix='/rad_19_1', output_dir='./output/vqa/rad/rad_19_1', evaluate=False, text_encoder='bert-base-uncased', text_decoder='bert-base-uncased', device='cuda', seed=42, world_size=1, dist_url='env://', distributed=False, result_dir='./output/vqa/rad/rad_19_1\\result')
+train dataset size:  1793
+test dataset size:  451
+Creating model
+reshape position embedding from 256 to 576
+reshape position embedding from 256 to 576
+load checkpoint from ./output/2024-06-27_12-44/med_pretrain_19.pth
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['temp', 'image_queue', 'text_queue', 'queue_ptr', 'vision_proj.weight', 'vision_proj.bias', 'text_proj.weight', 'text_proj.bias', 'vision_proj_m.weight', 'vision_proj_m.bias', 'text_proj_m.weight', 'text_proj_m.bias', 'itm_head.0.weight', 'itm_head.0.bias', 'itm_head.1.weight', 'itm_head.1.bias', 'itm_head.3.weight', 'itm_head.3.bias'])
+
+Start training
+
+config:  {'rad': {'train_file': ['/mnt/sda/lpf/data/vqa/data_RAD/trainset.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_RAD/testset.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_RAD/answer_all_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_RAD/images/'}, 'pathvqa': {'train_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_train.json', '/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_PathVQA/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_PathVQA/images/'}, 'slake': {'train_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_train.json', '/mnt/sda/lpf/data/vqa/data_Slake/en/slake_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_Slake/en/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_Slake/imgs/'}, 'med2019': {'train_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_train.json', '/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_valid.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/vqa_med/2019/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/vqa_med/2019/images/'}, 'image_res': 256, 'batch_size_train': 8, 'batch_size_test': 4, 'k_test': 128, 'alpha': 0.4, 'distill': True, 'warm_up': True, 'eos': '[SEP]', 'bert_config': 'configs/config_bert.json', 'init_lr': 2e-05, 'weight_decay': 0.05, 'power_decay': -0.1, 'min_lr': 1e-08, 'max_epoch': 10}
+args:  Namespace(dataset_use='rad', is_save_path=False, checkpoint='./output/2024-06-27_12-44/med_pretrain_19.pth', output_suffix='/rad_19_1', output_dir='./output/vqa/rad/rad_19_1', evaluate=False, text_encoder='bert-base-uncased', text_decoder='bert-base-uncased', device='cuda', seed=42, world_size=1, dist_url='env://', distributed=False, result_dir='./output/vqa/rad/rad_19_1\\result')
+train dataset size:  1793
+test dataset size:  451
+Creating model
+load checkpoint from ./output/2024-06-27_12-44/med_pretrain_19.pth
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['temp', 'image_queue', 'text_queue', 'queue_ptr', 'vision_proj.weight', 'vision_proj.bias', 'text_proj.weight', 'text_proj.bias', 'vision_proj_m.weight', 'vision_proj_m.bias', 'text_proj_m.weight', 'text_proj_m.bias', 'itm_head.0.weight', 'itm_head.0.bias', 'itm_head.1.weight', 'itm_head.1.bias', 'itm_head.3.weight', 'itm_head.3.bias'])
+
+Start training
+
+config:  {'rad': {'train_file': ['/mnt/sda/lpf/data/vqa/data_RAD/trainset.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_RAD/testset.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_RAD/answer_all_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_RAD/images/'}, 'pathvqa': {'train_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_train.json', '/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_PathVQA/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_PathVQA/images/'}, 'slake': {'train_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_train.json', '/mnt/sda/lpf/data/vqa/data_Slake/en/slake_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_Slake/en/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_Slake/imgs/'}, 'med2019': {'train_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_train.json', '/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_valid.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/vqa_med/2019/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/vqa_med/2019/images/'}, 'image_res': 256, 'batch_size_train': 8, 'batch_size_test': 4, 'k_test': 128, 'alpha': 0.4, 'distill': True, 'warm_up': True, 'eos': '[SEP]', 'bert_config': 'configs/config_bert.json', 'init_lr': 2e-05, 'weight_decay': 0.05, 'power_decay': -0.1, 'min_lr': 1e-08, 'max_epoch': 10}
+args:  Namespace(dataset_use='rad', is_save_path=True, checkpoint='./output/2024-06-27_12-44/med_pretrain_19.pth', output_suffix='/rad_19_1', output_dir='./output/vqa/rad/rad_19_1', evaluate=False, text_encoder='bert-base-uncased', text_decoder='bert-base-uncased', device='cuda', seed=42, world_size=1, dist_url='env://', distributed=False, result_dir='./output/vqa/rad/rad_19_1\\result')
+train dataset size:  1793
+test dataset size:  451
+Creating model
+load checkpoint from ./output/2024-06-27_12-44/med_pretrain_19.pth
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['temp', 'image_queue', 'text_queue', 'queue_ptr', 'vision_proj.weight', 'vision_proj.bias', 'text_proj.weight', 'text_proj.bias', 'vision_proj_m.weight', 'vision_proj_m.bias', 'text_proj_m.weight', 'text_proj_m.bias', 'itm_head.0.weight', 'itm_head.0.bias', 'itm_head.1.weight', 'itm_head.1.bias', 'itm_head.3.weight', 'itm_head.3.bias'])
+
+Start training
+
+Train Epoch: [0]  [  0/224]  eta: 2:12:20  lr: 0.000020  loss: 15.9375  time: 35.4494  data: 34.4189  max mem: 3534
+Train Epoch: [0]  [ 50/224]  eta: 0:02:35  lr: 0.000020  loss: 41.5000  time: 0.2014  data: 0.0002  max mem: 3973
+Train Epoch: [0]  [100/224]  eta: 0:01:08  lr: 0.000020  loss: 16.7500  time: 0.2019  data: 0.0001  max mem: 3983
+Train Epoch: [0]  [150/224]  eta: 0:00:32  lr: 0.000020  loss: 11.8125  time: 0.2018  data: 0.0001  max mem: 4002
+Train Epoch: [0]  [200/224]  eta: 0:00:09  lr: 0.000020  loss: 12.8750  time: 0.2007  data: 0.0001  max mem: 4002
+Train Epoch: [0]  [223/224]  eta: 0:00:00  lr: 0.000020  loss: 17.2500  time: 0.2020  data: 0.0002  max mem: 4002
+Train Epoch: [0] Total time: 0:01:22 (0.3673 s / it)
+Averaged stats: lr: 0.000020  loss: 16.037249
+Train Epoch: [1]  [  0/224]  eta: 2:10:29  lr: 0.000020  loss: 17.0000  time: 34.9509  data: 34.3969  max mem: 4423
+Train Epoch: [1]  [ 50/224]  eta: 0:02:33  lr: 0.000020  loss: 18.3750  time: 0.2017  data: 0.0000  max mem: 4575
+Train Epoch: [1]  [100/224]  eta: 0:01:07  lr: 0.000020  loss: 4.7812  time: 0.2097  data: 0.0000  max mem: 4578
+Train Epoch: [1]  [150/224]  eta: 0:00:32  lr: 0.000020  loss: 7.8125  time: 0.2039  data: 0.0001  max mem: 4578
+Train Epoch: [1]  [200/224]  eta: 0:00:09  lr: 0.000020  loss: 10.0000  time: 0.2058  data: 0.0000  max mem: 4582
+Train Epoch: [1]  [223/224]  eta: 0:00:00  lr: 0.000020  loss: 29.0000  time: 0.2098  data: 0.0002  max mem: 4582
+Train Epoch: [1] Total time: 0:01:22 (0.3680 s / it)
+Averaged stats: lr: 0.000020  loss: 15.256278
+Train Epoch: [2]  [  0/224]  eta: 2:10:02  lr: 0.000018  loss: 8.4375  time: 34.8348  data: 34.3788  max mem: 4582
+Train Epoch: [2]  [ 50/224]  eta: 0:02:33  lr: 0.000018  loss: 14.0625  time: 0.2020  data: 0.0001  max mem: 4585
+Train Epoch: [2]  [100/224]  eta: 0:01:07  lr: 0.000018  loss: 8.5000  time: 0.2025  data: 0.0002  max mem: 4585
+Train Epoch: [2]  [150/224]  eta: 0:00:31  lr: 0.000018  loss: 11.3750  time: 0.2026  data: 0.0002  max mem: 4585
+Train Epoch: [2]  [200/224]  eta: 0:00:09  lr: 0.000018  loss: 9.5625  time: 0.2048  data: 0.0002  max mem: 4585
+Train Epoch: [2]  [223/224]  eta: 0:00:00  lr: 0.000018  loss: 9.6875  time: 0.2041  data: 0.0000  max mem: 4585
+Train Epoch: [2] Total time: 0:01:21 (0.3655 s / it)
+Averaged stats: lr: 0.000018  loss: 14.946150
+Train Epoch: [3]  [  0/224]  eta: 2:10:08  lr: 0.000016  loss: 15.5000  time: 34.8575  data: 34.3695  max mem: 4585
+Train Epoch: [3]  [ 50/224]  eta: 0:02:33  lr: 0.000016  loss: 11.8125  time: 0.2019  data: 0.0001  max mem: 4585
+Train Epoch: [3]  [100/224]  eta: 0:01:07  lr: 0.000016  loss: 9.7500  time: 0.2031  data: 0.0001  max mem: 4585
+Train Epoch: [3]  [150/224]  eta: 0:00:31  lr: 0.000016  loss: 15.0625  time: 0.2036  data: 0.0000  max mem: 4585
+Train Epoch: [3]  [200/224]  eta: 0:00:09  lr: 0.000016  loss: 14.0625  time: 0.2049  data: 0.0000  max mem: 4585
+Train Epoch: [3]  [223/224]  eta: 0:00:00  lr: 0.000016  loss: 5.5625  time: 0.2100  data: 0.0001  max mem: 4585
+Train Epoch: [3] Total time: 0:01:22 (0.3664 s / it)
+Averaged stats: lr: 0.000016  loss: 14.717355
+Train Epoch: [4]  [  0/224]  eta: 2:11:44  lr: 0.000013  loss: 5.1250  time: 35.2865  data: 34.7859  max mem: 4585
+Train Epoch: [4]  [ 50/224]  eta: 0:02:34  lr: 0.000013  loss: 24.2500  time: 0.2025  data: 0.0000  max mem: 4585
+Train Epoch: [4]  [100/224]  eta: 0:01:08  lr: 0.000013  loss: 10.4375  time: 0.2023  data: 0.0001  max mem: 4585
+Train Epoch: [4]  [150/224]  eta: 0:00:32  lr: 0.000013  loss: 9.3750  time: 0.2025  data: 0.0000  max mem: 4585
+Train Epoch: [4]  [200/224]  eta: 0:00:09  lr: 0.000013  loss: 14.5625  time: 0.2065  data: 0.0001  max mem: 4585
+Train Epoch: [4]  [223/224]  eta: 0:00:00  lr: 0.000013  loss: 22.6250  time: 0.2077  data: 0.0001  max mem: 4585
+Train Epoch: [4] Total time: 0:01:22 (0.3682 s / it)
+Averaged stats: lr: 0.000013  loss: 14.565430
+Train Epoch: [5]  [  0/224]  eta: 2:10:01  lr: 0.000010  loss: 12.8125  time: 34.8294  data: 34.3544  max mem: 4585
+Train Epoch: [5]  [ 50/224]  eta: 0:02:33  lr: 0.000010  loss: 18.3750  time: 0.2021  data: 0.0000  max mem: 4587
+Train Epoch: [5]  [100/224]  eta: 0:01:07  lr: 0.000010  loss: 7.9688  time: 0.2033  data: 0.0001  max mem: 4587
+Train Epoch: [5]  [150/224]  eta: 0:00:31  lr: 0.000010  loss: 11.8125  time: 0.2032  data: 0.0000  max mem: 4587
+Train Epoch: [5]  [200/224]  eta: 0:00:09  lr: 0.000010  loss: 21.2500  time: 0.2050  data: 0.0001  max mem: 4587
+Train Epoch: [5]  [223/224]  eta: 0:00:00  lr: 0.000010  loss: 8.2500  time: 0.2052  data: 0.0000  max mem: 4587
+Train Epoch: [5] Total time: 0:01:21 (0.3661 s / it)
+Averaged stats: lr: 0.000010  loss: 14.527065
+Train Epoch: [6]  [  0/224]  eta: 2:10:03  lr: 0.000007  loss: 12.6250  time: 34.8351  data: 34.3791  max mem: 4587
+Train Epoch: [6]  [ 50/224]  eta: 0:02:33  lr: 0.000007  loss: 4.7500  time: 0.2012  data: 0.0001  max mem: 4587
+Train Epoch: [6]  [100/224]  eta: 0:01:07  lr: 0.000007  loss: 14.1875  time: 0.2027  data: 0.0001  max mem: 4587
+Train Epoch: [6]  [150/224]  eta: 0:00:31  lr: 0.000007  loss: 20.6250  time: 0.2046  data: 0.0003  max mem: 4587
+Train Epoch: [6]  [200/224]  eta: 0:00:09  lr: 0.000007  loss: 14.9375  time: 0.2072  data: 0.0000  max mem: 4587
+Train Epoch: [6]  [223/224]  eta: 0:00:00  lr: 0.000007  loss: 15.5625  time: 0.2051  data: 0.0001  max mem: 4587
+Train Epoch: [6] Total time: 0:01:21 (0.3658 s / it)
+Averaged stats: lr: 0.000007  loss: 14.441825
+Train Epoch: [7]  [  0/224]  eta: 2:09:09  lr: 0.000004  loss: 14.8750  time: 34.5945  data: 34.2035  max mem: 4587
+Train Epoch: [7]  [ 50/224]  eta: 0:02:32  lr: 0.000004  loss: 28.3750  time: 0.2022  data: 0.0002  max mem: 4592
+Train Epoch: [7]  [100/224]  eta: 0:01:07  lr: 0.000004  loss: 16.6250  time: 0.2027  data: 0.0001  max mem: 4592
+Train Epoch: [7]  [150/224]  eta: 0:00:31  lr: 0.000004  loss: 9.3750  time: 0.2031  data: 0.0001  max mem: 4592
+Train Epoch: [7]  [200/224]  eta: 0:00:08  lr: 0.000004  loss: 10.4375  time: 0.2049  data: 0.0001  max mem: 4592
+Train Epoch: [7]  [223/224]  eta: 0:00:00  lr: 0.000004  loss: 14.1250  time: 0.2043  data: 0.0001  max mem: 4592
+Train Epoch: [7] Total time: 0:01:21 (0.3646 s / it)
+Averaged stats: lr: 0.000004  loss: 14.476842
+Train Epoch: [8]  [  0/224]  eta: 2:10:03  lr: 0.000002  loss: 30.6250  time: 34.8353  data: 34.3095  max mem: 4592
+Train Epoch: [8]  [ 50/224]  eta: 0:02:33  lr: 0.000002  loss: 14.7500  time: 0.2015  data: 0.0000  max mem: 4592
+Train Epoch: [8]  [100/224]  eta: 0:01:07  lr: 0.000002  loss: 13.4375  time: 0.2021  data: 0.0002  max mem: 4592
+Train Epoch: [8]  [150/224]  eta: 0:00:31  lr: 0.000002  loss: 19.0000  time: 0.2040  data: 0.0001  max mem: 4592
+Train Epoch: [8]  [200/224]  eta: 0:00:09  lr: 0.000002  loss: 12.1875  time: 0.2070  data: 0.0001  max mem: 4592
+Train Epoch: [8]  [223/224]  eta: 0:00:00  lr: 0.000002  loss: 10.9375  time: 0.2099  data: 0.0001  max mem: 4592
+Train Epoch: [8] Total time: 0:01:22 (0.3662 s / it)
+Averaged stats: lr: 0.000002  loss: 14.477260
+Train Epoch: [9]  [  0/224]  eta: 2:09:39  lr: 0.000000  loss: 10.5625  time: 34.7318  data: 34.3498  max mem: 4592
+Train Epoch: [9]  [ 50/224]  eta: 0:02:33  lr: 0.000000  loss: 5.6250  time: 0.2025  data: 0.0000  max mem: 4592
+Train Epoch: [9]  [100/224]  eta: 0:01:07  lr: 0.000000  loss: 19.1250  time: 0.2024  data: 0.0002  max mem: 4592
+Train Epoch: [9]  [150/224]  eta: 0:00:31  lr: 0.000000  loss: 23.8750  time: 0.2031  data: 0.0001  max mem: 4592
+Train Epoch: [9]  [200/224]  eta: 0:00:09  lr: 0.000000  loss: 7.6250  time: 0.2051  data: 0.0001  max mem: 4595
+Train Epoch: [9]  [223/224]  eta: 0:00:00  lr: 0.000000  loss: 11.8125  time: 0.2047  data: 0.0000  max mem: 4595
+Train Epoch: [9] Total time: 0:01:21 (0.3654 s / it)
+Averaged stats: lr: 0.000000  loss: 14.439314
+Training time 0:13:58
+config:  {'rad': {'train_file': ['/mnt/sda/lpf/data/vqa/data_RAD/trainset.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_RAD/testset.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_RAD/answer_all_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_RAD/images/'}, 'pathvqa': {'train_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_train.json', '/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_PathVQA/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_PathVQA/images/'}, 'slake': {'train_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_train.json', '/mnt/sda/lpf/data/vqa/data_Slake/en/slake_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_Slake/en/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_Slake/imgs/'}, 'med2019': {'train_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_train.json', '/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_valid.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/vqa_med/2019/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/vqa_med/2019/images/'}, 'image_res': 256, 'batch_size_train': 8, 'batch_size_test': 4, 'k_test': 128, 'alpha': 0.4, 'distill': True, 'warm_up': True, 'eos': '[SEP]', 'bert_config': 'configs/config_bert.json', 'init_lr': 2e-05, 'weight_decay': 0.05, 'power_decay': -0.1, 'min_lr': 1e-08, 'max_epoch': 50}
+args:  Namespace(dataset_use='rad', is_save_path=True, checkpoint='./output/vqa/rad/rad_19_1/med_pretrain_19_rad.pth', output_suffix='/rad_19_1', output_dir='./output/vqa/rad/rad_19_1', evaluate=False, text_encoder='bert-base-uncased', text_decoder='bert-base-uncased', device='cuda', seed=42, world_size=1, dist_url='env://', distributed=False, result_dir='./output/vqa/rad/rad_19_1\\result')
+train dataset size:  1793
+test dataset size:  451
+Creating model
+config:  {'rad': {'train_file': ['/mnt/sda/lpf/data/vqa/data_RAD/trainset.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_RAD/testset.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_RAD/answer_all_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_RAD/images/'}, 'pathvqa': {'train_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_train.json', '/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_PathVQA/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_PathVQA/images/'}, 'slake': {'train_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_train.json', '/mnt/sda/lpf/data/vqa/data_Slake/en/slake_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_Slake/en/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_Slake/imgs/'}, 'med2019': {'train_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_train.json', '/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_valid.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/vqa_med/2019/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/vqa_med/2019/images/'}, 'image_res': 256, 'batch_size_train': 8, 'batch_size_test': 4, 'k_test': 128, 'alpha': 0.4, 'distill': True, 'warm_up': True, 'eos': '[SEP]', 'bert_config': 'configs/config_bert.json', 'init_lr': 2e-05, 'weight_decay': 0.05, 'power_decay': -0.1, 'min_lr': 1e-08, 'max_epoch': 50}
+args:  Namespace(dataset_use='rad', is_save_path=True, checkpoint='./output/vqa/rad/rad_19_1/med_pretrain_19_rad.pth', output_suffix='/rad_19_1', output_dir='./output/vqa/rad/rad_19_1', evaluate=False, text_encoder='bert-base-uncased', text_decoder='bert-base-uncased', device='cuda', seed=42, world_size=1, dist_url='env://', distributed=False, result_dir='./output/vqa/rad/rad_19_1\\result')
+train dataset size:  1793
+test dataset size:  451
+Creating model
+config:  {'rad': {'train_file': ['/mnt/sda/lpf/data/vqa/data_RAD/trainset.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_RAD/testset.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_RAD/answer_all_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_RAD/images/'}, 'pathvqa': {'train_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_train.json', '/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_PathVQA/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_PathVQA/images/'}, 'slake': {'train_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_train.json', '/mnt/sda/lpf/data/vqa/data_Slake/en/slake_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_Slake/en/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_Slake/imgs/'}, 'med2019': {'train_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_train.json', '/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_valid.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/vqa_med/2019/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/vqa_med/2019/images/'}, 'image_res': 256, 'batch_size_train': 8, 'batch_size_test': 4, 'k_test': 128, 'alpha': 0.4, 'distill': True, 'warm_up': True, 'eos': '[SEP]', 'bert_config': 'configs/config_bert.json', 'init_lr': 2e-05, 'weight_decay': 0.05, 'power_decay': -0.1, 'min_lr': 1e-08, 'max_epoch': 50}
+args:  Namespace(dataset_use='rad', is_save_path=True, checkpoint='./output/2024-06-27_12-44/med_pretrain_19.pth', output_suffix='/rad_19_1', output_dir='./output/vqa/rad/rad_19_1', evaluate=False, text_encoder='bert-base-uncased', text_decoder='bert-base-uncased', device='cuda', seed=42, world_size=1, dist_url='env://', distributed=False, result_dir='./output/vqa/rad/rad_19_1\\result')
+train dataset size:  1793
+test dataset size:  451
+Creating model
+load checkpoint from ./output/2024-06-27_12-44/med_pretrain_19.pth
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['temp', 'image_queue', 'text_queue', 'queue_ptr', 'vision_proj.weight', 'vision_proj.bias', 'text_proj.weight', 'text_proj.bias', 'vision_proj_m.weight', 'vision_proj_m.bias', 'text_proj_m.weight', 'text_proj_m.bias', 'itm_head.0.weight', 'itm_head.0.bias', 'itm_head.1.weight', 'itm_head.1.bias', 'itm_head.3.weight', 'itm_head.3.bias'])
+
+Start training
+
+Train Epoch: [0]  [  0/224]  eta: 2:16:29  lr: 0.000020  loss: 15.9375  time: 36.5601  data: 35.8934  max mem: 3534
+Train Epoch: [0]  [ 50/224]  eta: 0:02:40  lr: 0.000020  loss: 41.5000  time: 0.2077  data: 0.0003  max mem: 3973
+Train Epoch: [0]  [100/224]  eta: 0:01:10  lr: 0.000020  loss: 16.7500  time: 0.2060  data: 0.0000  max mem: 3983
+Train Epoch: [0]  [150/224]  eta: 0:00:33  lr: 0.000020  loss: 11.8125  time: 0.2055  data: 0.0002  max mem: 4002
+Train Epoch: [0]  [200/224]  eta: 0:00:09  lr: 0.000020  loss: 12.8750  time: 0.2012  data: 0.0000  max mem: 4002
+Train Epoch: [0]  [223/224]  eta: 0:00:00  lr: 0.000020  loss: 17.2500  time: 0.2089  data: 0.0001  max mem: 4002
+Train Epoch: [0] Total time: 0:01:24 (0.3760 s / it)
+Averaged stats: lr: 0.000020  loss: 16.037249
+Train Epoch: [1]  [  0/224]  eta: 2:12:15  lr: 0.000020  loss: 17.0000  time: 35.4285  data: 35.0195  max mem: 4423
+Train Epoch: [1]  [ 50/224]  eta: 0:02:35  lr: 0.000020  loss: 18.3750  time: 0.2018  data: 0.0000  max mem: 4575
+Train Epoch: [1]  [100/224]  eta: 0:01:08  lr: 0.000020  loss: 4.7500  time: 0.2013  data: 0.0001  max mem: 4578
+Train Epoch: [1]  [150/224]  eta: 0:00:32  lr: 0.000020  loss: 7.8125  time: 0.2021  data: 0.0000  max mem: 4578
+Train Epoch: [1]  [200/224]  eta: 0:00:09  lr: 0.000020  loss: 9.9375  time: 0.2039  data: 0.0002  max mem: 4582
+Train Epoch: [1]  [223/224]  eta: 0:00:00  lr: 0.000020  loss: 29.0000  time: 0.2049  data: 0.0002  max mem: 4582
+Train Epoch: [1] Total time: 0:01:22 (0.3675 s / it)
+Averaged stats: lr: 0.000020  loss: 15.250279
+Train Epoch: [2]  [  0/224]  eta: 2:09:52  lr: 0.000020  loss: 8.3750  time: 34.7891  data: 34.3291  max mem: 4582
+Train Epoch: [2]  [ 50/224]  eta: 0:02:33  lr: 0.000020  loss: 13.9375  time: 0.2016  data: 0.0000  max mem: 4585
+Train Epoch: [2]  [100/224]  eta: 0:01:07  lr: 0.000020  loss: 8.5000  time: 0.2034  data: 0.0001  max mem: 4585
+Train Epoch: [2]  [150/224]  eta: 0:00:31  lr: 0.000020  loss: 11.4375  time: 0.2024  data: 0.0000  max mem: 4585
+Train Epoch: [2]  [200/224]  eta: 0:00:08  lr: 0.000020  loss: 9.5000  time: 0.2056  data: 0.0000  max mem: 4585
+Train Epoch: [2]  [223/224]  eta: 0:00:00  lr: 0.000020  loss: 9.6250  time: 0.2048  data: 0.0000  max mem: 4585
+Train Epoch: [2] Total time: 0:01:21 (0.3654 s / it)
+Averaged stats: lr: 0.000020  loss: 14.897321
+Train Epoch: [3]  [  0/224]  eta: 2:10:05  lr: 0.000020  loss: 15.3750  time: 34.8482  data: 34.3655  max mem: 4585
+Train Epoch: [3]  [ 50/224]  eta: 0:02:33  lr: 0.000020  loss: 11.7500  time: 0.2021  data: 0.0000  max mem: 4585
+Train Epoch: [3]  [100/224]  eta: 0:01:07  lr: 0.000020  loss: 9.6250  time: 0.2022  data: 0.0001  max mem: 4585
+Train Epoch: [3]  [150/224]  eta: 0:00:31  lr: 0.000020  loss: 14.8750  time: 0.2035  data: 0.0000  max mem: 4585
+Train Epoch: [3]  [200/224]  eta: 0:00:09  lr: 0.000020  loss: 13.8750  time: 0.2050  data: 0.0000  max mem: 4585
+Train Epoch: [3]  [223/224]  eta: 0:00:00  lr: 0.000020  loss: 5.5312  time: 0.2080  data: 0.0001  max mem: 4585
+Train Epoch: [3] Total time: 0:01:21 (0.3658 s / it)
+Averaged stats: lr: 0.000020  loss: 14.606306
+Train Epoch: [4]  [  0/224]  eta: 2:10:44  lr: 0.000020  loss: 5.0625  time: 35.0222  data: 34.5832  max mem: 4585
+Train Epoch: [4]  [ 50/224]  eta: 0:02:33  lr: 0.000020  loss: 24.0000  time: 0.2024  data: 0.0001  max mem: 4585
+Train Epoch: [4]  [100/224]  eta: 0:01:07  lr: 0.000020  loss: 10.3125  time: 0.2022  data: 0.0002  max mem: 4585
+Train Epoch: [4]  [150/224]  eta: 0:00:32  lr: 0.000020  loss: 9.3125  time: 0.2023  data: 0.0001  max mem: 4585
+Train Epoch: [4]  [200/224]  eta: 0:00:09  lr: 0.000020  loss: 14.3750  time: 0.2078  data: 0.0000  max mem: 4585
+Train Epoch: [4]  [223/224]  eta: 0:00:00  lr: 0.000020  loss: 22.1250  time: 0.2049  data: 0.0002  max mem: 4585
+Train Epoch: [4] Total time: 0:01:22 (0.3669 s / it)
+Averaged stats: lr: 0.000020  loss: 14.358119
+Train Epoch: [5]  [  0/224]  eta: 2:09:48  lr: 0.000020  loss: 12.4375  time: 34.7695  data: 34.3915  max mem: 4585
+Train Epoch: [5]  [ 50/224]  eta: 0:02:33  lr: 0.000020  loss: 18.2500  time: 0.2015  data: 0.0002  max mem: 4587
+Train Epoch: [5]  [100/224]  eta: 0:01:07  lr: 0.000020  loss: 7.8438  time: 0.2030  data: 0.0000  max mem: 4587
+Train Epoch: [5]  [150/224]  eta: 0:00:31  lr: 0.000020  loss: 11.6875  time: 0.2034  data: 0.0001  max mem: 4587
+Train Epoch: [5]  [200/224]  eta: 0:00:09  lr: 0.000020  loss: 20.5000  time: 0.2066  data: 0.0001  max mem: 4587
+Train Epoch: [5]  [223/224]  eta: 0:00:00  lr: 0.000020  loss: 8.0625  time: 0.2074  data: 0.0001  max mem: 4587
+Train Epoch: [5] Total time: 0:01:21 (0.3660 s / it)
+Averaged stats: lr: 0.000020  loss: 14.202846
+Train Epoch: [6]  [  0/224]  eta: 2:10:14  lr: 0.000019  loss: 12.5000  time: 34.8845  data: 34.3782  max mem: 4587
+Train Epoch: [6]  [ 50/224]  eta: 0:02:33  lr: 0.000019  loss: 4.6875  time: 0.2014  data: 0.0001  max mem: 4587
+Train Epoch: [6]  [100/224]  eta: 0:01:07  lr: 0.000019  loss: 13.7500  time: 0.2023  data: 0.0001  max mem: 4587
+Train Epoch: [6]  [150/224]  eta: 0:00:31  lr: 0.000019  loss: 19.8750  time: 0.2044  data: 0.0002  max mem: 4587
+Train Epoch: [6]  [200/224]  eta: 0:00:09  lr: 0.000019  loss: 14.5000  time: 0.2053  data: 0.0001  max mem: 4587
+Train Epoch: [6]  [223/224]  eta: 0:00:00  lr: 0.000019  loss: 15.2500  time: 0.2049  data: 0.0000  max mem: 4587
+Train Epoch: [6] Total time: 0:01:21 (0.3660 s / it)
+Averaged stats: lr: 0.000019  loss: 14.015485
+Train Epoch: [7]  [  0/224]  eta: 2:09:53  lr: 0.000019  loss: 14.1250  time: 34.7928  data: 34.3568  max mem: 4587
+Train Epoch: [7]  [ 50/224]  eta: 0:02:33  lr: 0.000019  loss: 27.2500  time: 0.2023  data: 0.0002  max mem: 4592
+Train Epoch: [7]  [100/224]  eta: 0:01:07  lr: 0.000019  loss: 15.6875  time: 0.2027  data: 0.0001  max mem: 4592
+Train Epoch: [7]  [150/224]  eta: 0:00:31  lr: 0.000019  loss: 9.1250  time: 0.2025  data: 0.0001  max mem: 4592
+Train Epoch: [7]  [200/224]  eta: 0:00:09  lr: 0.000019  loss: 10.3750  time: 0.2050  data: 0.0001  max mem: 4592
+Train Epoch: [7]  [223/224]  eta: 0:00:00  lr: 0.000019  loss: 13.6250  time: 0.2048  data: 0.0000  max mem: 4592
+Train Epoch: [7] Total time: 0:01:21 (0.3655 s / it)
+Averaged stats: lr: 0.000019  loss: 13.927874
+Train Epoch: [8]  [  0/224]  eta: 2:10:47  lr: 0.000019  loss: 29.0000  time: 35.0357  data: 34.5566  max mem: 4592
+Train Epoch: [8]  [ 50/224]  eta: 0:02:33  lr: 0.000019  loss: 13.8750  time: 0.2015  data: 0.0002  max mem: 4592
+Train Epoch: [8]  [100/224]  eta: 0:01:07  lr: 0.000019  loss: 12.5625  time: 0.2022  data: 0.0000  max mem: 4592
+Train Epoch: [8]  [150/224]  eta: 0:00:32  lr: 0.000019  loss: 18.2500  time: 0.2050  data: 0.0001  max mem: 4592
+Train Epoch: [8]  [200/224]  eta: 0:00:09  lr: 0.000019  loss: 11.8125  time: 0.2069  data: 0.0001  max mem: 4592
+Train Epoch: [8]  [223/224]  eta: 0:00:00  lr: 0.000019  loss: 10.5625  time: 0.2087  data: 0.0000  max mem: 4592
+Train Epoch: [8] Total time: 0:01:22 (0.3671 s / it)
+Averaged stats: lr: 0.000019  loss: 13.846261
+Train Epoch: [9]  [  0/224]  eta: 2:10:07  lr: 0.000018  loss: 10.0000  time: 34.8530  data: 34.4305  max mem: 4592
+Train Epoch: [9]  [ 50/224]  eta: 0:02:33  lr: 0.000018  loss: 5.5312  time: 0.2019  data: 0.0002  max mem: 4592
+Train Epoch: [9]  [100/224]  eta: 0:01:07  lr: 0.000018  loss: 18.7500  time: 0.2021  data: 0.0001  max mem: 4592
+Train Epoch: [9]  [150/224]  eta: 0:00:31  lr: 0.000018  loss: 23.0000  time: 0.2034  data: 0.0000  max mem: 4592
+Train Epoch: [9]  [200/224]  eta: 0:00:09  lr: 0.000018  loss: 7.3125  time: 0.2070  data: 0.0000  max mem: 4595
+Train Epoch: [9]  [223/224]  eta: 0:00:00  lr: 0.000018  loss: 11.1250  time: 0.2080  data: 0.0001  max mem: 4595
+Train Epoch: [9] Total time: 0:01:22 (0.3662 s / it)
+Averaged stats: lr: 0.000018  loss: 13.721122
+Train Epoch: [10]  [  0/224]  eta: 2:10:17  lr: 0.000018  loss: 10.3750  time: 34.8994  data: 34.4764  max mem: 4595
+Train Epoch: [10]  [ 50/224]  eta: 0:02:33  lr: 0.000018  loss: 17.7500  time: 0.2022  data: 0.0001  max mem: 4595
+Train Epoch: [10]  [100/224]  eta: 0:01:07  lr: 0.000018  loss: 16.7500  time: 0.2016  data: 0.0001  max mem: 4598
+Train Epoch: [10]  [150/224]  eta: 0:00:31  lr: 0.000018  loss: 23.0000  time: 0.2032  data: 0.0000  max mem: 4598
+Train Epoch: [10]  [200/224]  eta: 0:00:09  lr: 0.000018  loss: 18.6250  time: 0.2075  data: 0.0001  max mem: 4598
+Train Epoch: [10]  [223/224]  eta: 0:00:00  lr: 0.000018  loss: 12.5625  time: 0.2068  data: 0.0001  max mem: 4598
+Train Epoch: [10] Total time: 0:01:22 (0.3666 s / it)
+Averaged stats: lr: 0.000018  loss: 13.610910
+Train Epoch: [11]  [  0/224]  eta: 2:10:02  lr: 0.000018  loss: 17.7500  time: 34.8334  data: 34.4344  max mem: 4598
+Train Epoch: [11]  [ 50/224]  eta: 0:02:33  lr: 0.000018  loss: 8.6875  time: 0.2025  data: 0.0000  max mem: 4598
+Train Epoch: [11]  [100/224]  eta: 0:01:07  lr: 0.000018  loss: 7.0625  time: 0.2021  data: 0.0000  max mem: 4598
+Train Epoch: [11]  [150/224]  eta: 0:00:31  lr: 0.000018  loss: 15.5625  time: 0.2026  data: 0.0002  max mem: 4598
+Train Epoch: [11]  [200/224]  eta: 0:00:09  lr: 0.000018  loss: 10.2500  time: 0.2074  data: 0.0002  max mem: 4598
+Train Epoch: [11]  [223/224]  eta: 0:00:00  lr: 0.000018  loss: 11.5625  time: 0.2059  data: 0.0000  max mem: 4598
+Train Epoch: [11] Total time: 0:01:22 (0.3661 s / it)
+Averaged stats: lr: 0.000018  loss: 13.581752
+Train Epoch: [12]  [  0/224]  eta: 2:10:27  lr: 0.000017  loss: 10.5000  time: 34.9453  data: 34.5223  max mem: 4598
+Train Epoch: [12]  [ 50/224]  eta: 0:02:33  lr: 0.000017  loss: 14.8750  time: 0.2029  data: 0.0001  max mem: 4598
+Train Epoch: [12]  [100/224]  eta: 0:01:07  lr: 0.000017  loss: 9.1250  time: 0.2017  data: 0.0000  max mem: 4598
+Train Epoch: [12]  [150/224]  eta: 0:00:32  lr: 0.000017  loss: 14.0000  time: 0.2034  data: 0.0001  max mem: 4598
+Train Epoch: [12]  [200/224]  eta: 0:00:09  lr: 0.000017  loss: 10.7500  time: 0.2081  data: 0.0002  max mem: 4598
+Train Epoch: [12]  [223/224]  eta: 0:00:00  lr: 0.000017  loss: 14.8125  time: 0.2048  data: 0.0001  max mem: 4598
+Train Epoch: [12] Total time: 0:01:22 (0.3665 s / it)
+Averaged stats: lr: 0.000017  loss: 13.523717
+Train Epoch: [13]  [  0/224]  eta: 2:09:47  lr: 0.000017  loss: 9.6875  time: 34.7637  data: 34.3577  max mem: 4598
+Train Epoch: [13]  [ 50/224]  eta: 0:02:33  lr: 0.000017  loss: 16.5000  time: 0.2021  data: 0.0001  max mem: 4598
+Train Epoch: [13]  [100/224]  eta: 0:01:07  lr: 0.000017  loss: 13.5625  time: 0.2023  data: 0.0000  max mem: 4598
+Train Epoch: [13]  [150/224]  eta: 0:00:31  lr: 0.000017  loss: 5.7812  time: 0.2036  data: 0.0000  max mem: 4604
+Train Epoch: [13]  [200/224]  eta: 0:00:09  lr: 0.000017  loss: 15.8750  time: 0.2056  data: 0.0002  max mem: 4604
+Train Epoch: [13]  [223/224]  eta: 0:00:00  lr: 0.000017  loss: 7.2188  time: 0.2045  data: 0.0001  max mem: 4604
+Train Epoch: [13] Total time: 0:01:21 (0.3655 s / it)
+Averaged stats: lr: 0.000017  loss: 13.516741
+Train Epoch: [14]  [  0/224]  eta: 2:10:30  lr: 0.000016  loss: 10.5000  time: 34.9557  data: 34.4247  max mem: 4604
+Train Epoch: [14]  [ 50/224]  eta: 0:02:33  lr: 0.000016  loss: 13.1875  time: 0.2029  data: 0.0000  max mem: 4604
+Train Epoch: [14]  [100/224]  eta: 0:01:07  lr: 0.000016  loss: 14.6250  time: 0.2024  data: 0.0000  max mem: 4604
+Train Epoch: [14]  [150/224]  eta: 0:00:32  lr: 0.000016  loss: 8.8125  time: 0.2038  data: 0.0001  max mem: 4604
+Train Epoch: [14]  [200/224]  eta: 0:00:09  lr: 0.000016  loss: 6.1562  time: 0.2074  data: 0.0001  max mem: 4604
+Train Epoch: [14]  [223/224]  eta: 0:00:00  lr: 0.000016  loss: 12.0000  time: 0.2085  data: 0.0002  max mem: 4604
+Train Epoch: [14] Total time: 0:01:22 (0.3673 s / it)
+Averaged stats: lr: 0.000016  loss: 13.499163
+Train Epoch: [15]  [  0/224]  eta: 2:10:21  lr: 0.000016  loss: 26.3750  time: 34.9153  data: 34.3633  max mem: 4604
+Train Epoch: [15]  [ 50/224]  eta: 0:02:33  lr: 0.000016  loss: 10.3125  time: 0.2010  data: 0.0002  max mem: 4604
+Train Epoch: [15]  [100/224]  eta: 0:01:07  lr: 0.000016  loss: 23.0000  time: 0.2028  data: 0.0000  max mem: 4604
+Train Epoch: [15]  [150/224]  eta: 0:00:31  lr: 0.000016  loss: 12.1250  time: 0.2042  data: 0.0000  max mem: 4604
+Train Epoch: [15]  [200/224]  eta: 0:00:09  lr: 0.000016  loss: 14.1875  time: 0.2048  data: 0.0001  max mem: 4604
+Train Epoch: [15]  [223/224]  eta: 0:00:00  lr: 0.000016  loss: 12.8125  time: 0.2051  data: 0.0001  max mem: 4604
+Train Epoch: [15] Total time: 0:01:22 (0.3661 s / it)
+Averaged stats: lr: 0.000016  loss: 13.403739
+Train Epoch: [16]  [  0/224]  eta: 2:10:35  lr: 0.000015  loss: 7.0625  time: 34.9799  data: 34.5309  max mem: 4604
+Train Epoch: [16]  [ 50/224]  eta: 0:02:33  lr: 0.000015  loss: 8.4375  time: 0.2018  data: 0.0001  max mem: 4604
+Train Epoch: [16]  [100/224]  eta: 0:01:07  lr: 0.000015  loss: 6.5625  time: 0.2021  data: 0.0000  max mem: 4604
+Train Epoch: [16]  [150/224]  eta: 0:00:32  lr: 0.000015  loss: 24.1250  time: 0.2047  data: 0.0000  max mem: 4604
+Train Epoch: [16]  [200/224]  eta: 0:00:09  lr: 0.000015  loss: 17.1250  time: 0.2053  data: 0.0001  max mem: 4604
+Train Epoch: [16]  [223/224]  eta: 0:00:00  lr: 0.000015  loss: 7.7812  time: 0.2069  data: 0.0001  max mem: 4604
+Train Epoch: [16] Total time: 0:01:22 (0.3667 s / it)
+Averaged stats: lr: 0.000015  loss: 13.415458
+Train Epoch: [17]  [  0/224]  eta: 2:10:24  lr: 0.000015  loss: 12.0625  time: 34.9327  data: 34.4937  max mem: 4604
+Train Epoch: [17]  [ 50/224]  eta: 0:02:33  lr: 0.000015  loss: 14.3125  time: 0.2019  data: 0.0002  max mem: 4604
+Train Epoch: [17]  [100/224]  eta: 0:01:07  lr: 0.000015  loss: 9.0625  time: 0.2025  data: 0.0002  max mem: 4604
+Train Epoch: [17]  [150/224]  eta: 0:00:32  lr: 0.000015  loss: 9.5625  time: 0.2029  data: 0.0001  max mem: 4604
+Train Epoch: [17]  [200/224]  eta: 0:00:09  lr: 0.000015  loss: 13.6250  time: 0.2057  data: 0.0000  max mem: 4604
+Train Epoch: [17]  [223/224]  eta: 0:00:00  lr: 0.000015  loss: 14.4375  time: 0.2047  data: 0.0000  max mem: 4604
+Train Epoch: [17] Total time: 0:01:22 (0.3661 s / it)
+Averaged stats: lr: 0.000015  loss: 13.405692
+Train Epoch: [18]  [  0/224]  eta: 2:10:50  lr: 0.000014  loss: 8.6875  time: 35.0471  data: 34.5591  max mem: 4604
+Train Epoch: [18]  [ 50/224]  eta: 0:02:34  lr: 0.000014  loss: 21.6250  time: 0.2024  data: 0.0000  max mem: 4604
+Train Epoch: [18]  [100/224]  eta: 0:01:07  lr: 0.000014  loss: 7.3438  time: 0.2025  data: 0.0001  max mem: 4604
+Train Epoch: [18]  [150/224]  eta: 0:00:32  lr: 0.000014  loss: 14.1875  time: 0.2042  data: 0.0002  max mem: 4604
+Train Epoch: [18]  [200/224]  eta: 0:00:09  lr: 0.000014  loss: 20.2500  time: 0.2050  data: 0.0001  max mem: 4604
+Train Epoch: [18]  [223/224]  eta: 0:00:00  lr: 0.000014  loss: 15.9375  time: 0.2046  data: 0.0000  max mem: 4604
+Train Epoch: [18] Total time: 0:01:22 (0.3666 s / it)
+Averaged stats: lr: 0.000014  loss: 13.432199
+Train Epoch: [19]  [  0/224]  eta: 2:10:03  lr: 0.000014  loss: 11.4375  time: 34.8393  data: 34.4183  max mem: 4604
+Train Epoch: [19]  [ 50/224]  eta: 0:02:33  lr: 0.000014  loss: 19.6250  time: 0.2024  data: 0.0000  max mem: 4604
+Train Epoch: [19]  [100/224]  eta: 0:01:07  lr: 0.000014  loss: 23.0000  time: 0.2027  data: 0.0002  max mem: 4604
+Train Epoch: [19]  [150/224]  eta: 0:00:31  lr: 0.000014  loss: 21.5000  time: 0.2030  data: 0.0003  max mem: 4604
+Train Epoch: [19]  [200/224]  eta: 0:00:09  lr: 0.000014  loss: 10.8125  time: 0.2081  data: 0.0001  max mem: 4604
+Train Epoch: [19]  [223/224]  eta: 0:00:00  lr: 0.000014  loss: 5.4688  time: 0.2078  data: 0.0001  max mem: 4604
+Train Epoch: [19] Total time: 0:01:22 (0.3663 s / it)
+Averaged stats: lr: 0.000014  loss: 13.351004
+Train Epoch: [20]  [  0/224]  eta: 2:10:02  lr: 0.000013  loss: 6.6250  time: 34.8344  data: 34.3989  max mem: 4604
+Train Epoch: [20]  [ 50/224]  eta: 0:02:33  lr: 0.000013  loss: 15.6250  time: 0.2023  data: 0.0001  max mem: 4604
+Train Epoch: [20]  [100/224]  eta: 0:01:07  lr: 0.000013  loss: 15.7500  time: 0.2021  data: 0.0000  max mem: 4604
+Train Epoch: [20]  [150/224]  eta: 0:00:31  lr: 0.000013  loss: 14.1875  time: 0.2028  data: 0.0000  max mem: 4604
+Train Epoch: [20]  [200/224]  eta: 0:00:09  lr: 0.000013  loss: 9.3750  time: 0.2082  data: 0.0001  max mem: 4604
+Train Epoch: [20]  [223/224]  eta: 0:00:00  lr: 0.000013  loss: 14.5000  time: 0.2069  data: 0.0001  max mem: 4604
+Train Epoch: [20] Total time: 0:01:22 (0.3663 s / it)
+Averaged stats: lr: 0.000013  loss: 13.354353
+Train Epoch: [21]  [  0/224]  eta: 2:10:11  lr: 0.000012  loss: 23.5000  time: 34.8706  data: 34.3746  max mem: 4604
+Train Epoch: [21]  [ 50/224]  eta: 0:02:33  lr: 0.000012  loss: 20.7500  time: 0.2032  data: 0.0001  max mem: 4604
+Train Epoch: [21]  [100/224]  eta: 0:01:07  lr: 0.000012  loss: 16.1250  time: 0.2023  data: 0.0001  max mem: 4604
+Train Epoch: [21]  [150/224]  eta: 0:00:31  lr: 0.000012  loss: 8.0000  time: 0.2038  data: 0.0001  max mem: 4604
+Train Epoch: [21]  [200/224]  eta: 0:00:09  lr: 0.000012  loss: 12.1250  time: 0.2078  data: 0.0002  max mem: 4604
+Train Epoch: [21]  [223/224]  eta: 0:00:00  lr: 0.000012  loss: 12.9375  time: 0.2082  data: 0.0001  max mem: 4604
+Train Epoch: [21] Total time: 0:01:22 (0.3664 s / it)
+Averaged stats: lr: 0.000012  loss: 13.359794
+Train Epoch: [22]  [  0/224]  eta: 2:10:07  lr: 0.000012  loss: 7.1250  time: 34.8569  data: 34.3729  max mem: 4604
+Train Epoch: [22]  [ 50/224]  eta: 0:02:33  lr: 0.000012  loss: 19.7500  time: 0.2017  data: 0.0001  max mem: 4604
+Train Epoch: [22]  [100/224]  eta: 0:01:07  lr: 0.000012  loss: 10.6250  time: 0.2035  data: 0.0001  max mem: 4604
+Train Epoch: [22]  [150/224]  eta: 0:00:31  lr: 0.000012  loss: 18.1250  time: 0.2040  data: 0.0002  max mem: 4604
+Train Epoch: [22]  [200/224]  eta: 0:00:09  lr: 0.000012  loss: 16.3750  time: 0.2083  data: 0.0000  max mem: 4604
+Train Epoch: [22]  [223/224]  eta: 0:00:00  lr: 0.000012  loss: 19.0000  time: 0.2048  data: 0.0000  max mem: 4604
+Train Epoch: [22] Total time: 0:01:22 (0.3664 s / it)
+Averaged stats: lr: 0.000012  loss: 13.365234
+Train Epoch: [23]  [  0/224]  eta: 2:10:16  lr: 0.000011  loss: 5.8750  time: 34.8955  data: 34.4855  max mem: 4604
+Train Epoch: [23]  [ 50/224]  eta: 0:02:33  lr: 0.000011  loss: 13.8750  time: 0.2019  data: 0.0001  max mem: 4604
+Train Epoch: [23]  [100/224]  eta: 0:01:07  lr: 0.000011  loss: 10.3125  time: 0.2026  data: 0.0001  max mem: 4604
+Train Epoch: [23]  [150/224]  eta: 0:00:32  lr: 0.000011  loss: 13.4375  time: 0.2038  data: 0.0001  max mem: 4604
+Train Epoch: [23]  [200/224]  eta: 0:00:09  lr: 0.000011  loss: 13.9375  time: 0.2053  data: 0.0000  max mem: 4604
+Train Epoch: [23]  [223/224]  eta: 0:00:00  lr: 0.000011  loss: 13.6250  time: 0.2072  data: 0.0001  max mem: 4604
+Train Epoch: [23] Total time: 0:01:22 (0.3666 s / it)
+Averaged stats: lr: 0.000011  loss: 13.338728
+Train Epoch: [24]  [  0/224]  eta: 2:10:13  lr: 0.000011  loss: 12.7500  time: 34.8807  data: 34.3737  max mem: 4604
+Train Epoch: [24]  [ 50/224]  eta: 0:02:33  lr: 0.000011  loss: 13.0000  time: 0.2018  data: 0.0000  max mem: 4604
+Train Epoch: [24]  [100/224]  eta: 0:01:07  lr: 0.000011  loss: 15.3750  time: 0.2017  data: 0.0000  max mem: 4604
+Train Epoch: [24]  [150/224]  eta: 0:00:31  lr: 0.000011  loss: 8.6250  time: 0.2032  data: 0.0001  max mem: 4604
+Train Epoch: [24]  [200/224]  eta: 0:00:09  lr: 0.000011  loss: 13.2500  time: 0.2102  data: 0.0000  max mem: 4604
+Train Epoch: [24]  [223/224]  eta: 0:00:00  lr: 0.000011  loss: 22.6250  time: 0.2049  data: 0.0001  max mem: 4604
+Train Epoch: [24] Total time: 0:01:22 (0.3664 s / it)
+Averaged stats: lr: 0.000011  loss: 13.315848
+Train Epoch: [25]  [  0/224]  eta: 2:10:30  lr: 0.000010  loss: 6.4688  time: 34.9576  data: 34.4997  max mem: 4604
+Train Epoch: [25]  [ 50/224]  eta: 0:02:33  lr: 0.000010  loss: 18.8750  time: 0.2016  data: 0.0002  max mem: 4604
+Train Epoch: [25]  [100/224]  eta: 0:01:07  lr: 0.000010  loss: 33.2500  time: 0.2035  data: 0.0001  max mem: 4604
+Train Epoch: [25]  [150/224]  eta: 0:00:32  lr: 0.000010  loss: 16.2500  time: 0.2035  data: 0.0000  max mem: 4604
+Train Epoch: [25]  [200/224]  eta: 0:00:09  lr: 0.000010  loss: 15.5000  time: 0.2065  data: 0.0000  max mem: 4604
+Train Epoch: [25]  [223/224]  eta: 0:00:00  lr: 0.000010  loss: 8.4375  time: 0.2051  data: 0.0002  max mem: 4604
+Train Epoch: [25] Total time: 0:01:22 (0.3667 s / it)
+Averaged stats: lr: 0.000010  loss: 13.334682
+Train Epoch: [26]  [  0/224]  eta: 2:09:45  lr: 0.000009  loss: 9.7500  time: 34.7575  data: 34.3665  max mem: 4604
+Train Epoch: [26]  [ 50/224]  eta: 0:02:33  lr: 0.000009  loss: 12.5625  time: 0.2025  data: 0.0002  max mem: 4604
+Train Epoch: [26]  [100/224]  eta: 0:01:07  lr: 0.000009  loss: 32.7500  time: 0.2031  data: 0.0001  max mem: 4604
+Train Epoch: [26]  [150/224]  eta: 0:00:31  lr: 0.000009  loss: 6.8125  time: 0.2045  data: 0.0001  max mem: 4604
+Train Epoch: [26]  [200/224]  eta: 0:00:09  lr: 0.000009  loss: 18.2500  time: 0.2051  data: 0.0000  max mem: 4604
+Train Epoch: [26]  [223/224]  eta: 0:00:00  lr: 0.000009  loss: 9.0000  time: 0.2049  data: 0.0001  max mem: 4604
+Train Epoch: [26] Total time: 0:01:21 (0.3657 s / it)
+Averaged stats: lr: 0.000009  loss: 13.338309
+Train Epoch: [27]  [  0/224]  eta: 2:10:34  lr: 0.000009  loss: 10.5625  time: 34.9754  data: 34.4614  max mem: 4604
+Train Epoch: [27]  [ 50/224]  eta: 0:02:33  lr: 0.000009  loss: 13.1875  time: 0.2020  data: 0.0001  max mem: 4604
+Train Epoch: [27]  [100/224]  eta: 0:01:07  lr: 0.000009  loss: 7.3125  time: 0.2024  data: 0.0000  max mem: 4604
+Train Epoch: [27]  [150/224]  eta: 0:00:32  lr: 0.000009  loss: 5.4375  time: 0.2042  data: 0.0000  max mem: 4604
+Train Epoch: [27]  [200/224]  eta: 0:00:09  lr: 0.000009  loss: 12.7500  time: 0.2064  data: 0.0002  max mem: 4604
+Train Epoch: [27]  [223/224]  eta: 0:00:00  lr: 0.000009  loss: 10.1875  time: 0.2089  data: 0.0001  max mem: 4604
+Train Epoch: [27] Total time: 0:01:22 (0.3670 s / it)
+Averaged stats: lr: 0.000009  loss: 13.296038
+Train Epoch: [28]  [  0/224]  eta: 2:10:09  lr: 0.000008  loss: 13.1875  time: 34.8642  data: 34.4132  max mem: 4604
+Train Epoch: [28]  [ 50/224]  eta: 0:02:33  lr: 0.000008  loss: 6.4375  time: 0.2014  data: 0.0000  max mem: 4604
+Train Epoch: [28]  [100/224]  eta: 0:01:07  lr: 0.000008  loss: 7.3750  time: 0.2036  data: 0.0001  max mem: 4604
+Train Epoch: [28]  [150/224]  eta: 0:00:31  lr: 0.000008  loss: 15.4375  time: 0.2033  data: 0.0001  max mem: 4604
+Train Epoch: [28]  [200/224]  eta: 0:00:09  lr: 0.000008  loss: 13.7500  time: 0.2055  data: 0.0002  max mem: 4604
+Train Epoch: [28]  [223/224]  eta: 0:00:00  lr: 0.000008  loss: 12.4375  time: 0.2080  data: 0.0000  max mem: 4604
+Train Epoch: [28] Total time: 0:01:22 (0.3662 s / it)
+Averaged stats: lr: 0.000008  loss: 13.308594
+Train Epoch: [29]  [  0/224]  eta: 2:10:18  lr: 0.000008  loss: 16.7500  time: 34.9027  data: 34.4777  max mem: 4604
+Train Epoch: [29]  [ 50/224]  eta: 0:02:33  lr: 0.000008  loss: 23.1250  time: 0.2028  data: 0.0000  max mem: 4604
+Train Epoch: [29]  [100/224]  eta: 0:01:07  lr: 0.000008  loss: 12.9375  time: 0.2034  data: 0.0001  max mem: 4604
+Train Epoch: [29]  [150/224]  eta: 0:00:31  lr: 0.000008  loss: 12.6250  time: 0.2025  data: 0.0000  max mem: 4604
+Train Epoch: [29]  [200/224]  eta: 0:00:09  lr: 0.000008  loss: 37.5000  time: 0.2054  data: 0.0001  max mem: 4604
+Train Epoch: [29]  [223/224]  eta: 0:00:00  lr: 0.000008  loss: 16.3750  time: 0.2073  data: 0.0001  max mem: 4604
+Train Epoch: [29] Total time: 0:01:22 (0.3662 s / it)
+Averaged stats: lr: 0.000008  loss: 13.345982
+Train Epoch: [30]  [  0/224]  eta: 2:11:09  lr: 0.000007  loss: 26.0000  time: 35.1339  data: 34.6859  max mem: 4604
+Train Epoch: [30]  [ 50/224]  eta: 0:02:34  lr: 0.000007  loss: 6.2500  time: 0.2012  data: 0.0002  max mem: 4604
+Train Epoch: [30]  [100/224]  eta: 0:01:07  lr: 0.000007  loss: 9.1875  time: 0.2023  data: 0.0002  max mem: 4604
+Train Epoch: [30]  [150/224]  eta: 0:00:32  lr: 0.000007  loss: 10.5625  time: 0.2043  data: 0.0001  max mem: 4604
+Train Epoch: [30]  [200/224]  eta: 0:00:09  lr: 0.000007  loss: 11.5000  time: 0.2057  data: 0.0002  max mem: 4604
+Train Epoch: [30]  [223/224]  eta: 0:00:00  lr: 0.000007  loss: 5.6562  time: 0.2080  data: 0.0000  max mem: 4604
+Train Epoch: [30] Total time: 0:01:22 (0.3674 s / it)
+Averaged stats: lr: 0.000007  loss: 13.347517
+Train Epoch: [31]  [  0/224]  eta: 2:10:31  lr: 0.000006  loss: 21.0000  time: 34.9634  data: 34.5294  max mem: 4604
+Train Epoch: [31]  [ 50/224]  eta: 0:02:33  lr: 0.000006  loss: 7.7812  time: 0.2020  data: 0.0000  max mem: 4604
+Train Epoch: [31]  [100/224]  eta: 0:01:07  lr: 0.000006  loss: 7.5312  time: 0.2018  data: 0.0003  max mem: 4604
+Train Epoch: [31]  [150/224]  eta: 0:00:32  lr: 0.000006  loss: 11.9375  time: 0.2039  data: 0.0001  max mem: 4604
+Train Epoch: [31]  [200/224]  eta: 0:00:09  lr: 0.000006  loss: 17.5000  time: 0.2081  data: 0.0001  max mem: 4604
+Train Epoch: [31]  [223/224]  eta: 0:00:00  lr: 0.000006  loss: 11.1250  time: 0.2074  data: 0.0001  max mem: 4604
+Train Epoch: [31] Total time: 0:01:22 (0.3669 s / it)
+Averaged stats: lr: 0.000006  loss: 13.362305
+Train Epoch: [32]  [  0/224]  eta: 2:09:31  lr: 0.000006  loss: 9.3750  time: 34.6959  data: 34.2629  max mem: 4604
+Train Epoch: [32]  [ 50/224]  eta: 0:02:32  lr: 0.000006  loss: 21.7500  time: 0.2029  data: 0.0002  max mem: 4604
+Train Epoch: [32]  [100/224]  eta: 0:01:07  lr: 0.000006  loss: 11.6875  time: 0.2019  data: 0.0000  max mem: 4604
+Train Epoch: [32]  [150/224]  eta: 0:00:31  lr: 0.000006  loss: 12.9375  time: 0.2041  data: 0.0001  max mem: 4604
+Train Epoch: [32]  [200/224]  eta: 0:00:09  lr: 0.000006  loss: 8.0000  time: 0.2081  data: 0.0001  max mem: 4604
+Train Epoch: [32]  [223/224]  eta: 0:00:00  lr: 0.000006  loss: 12.0000  time: 0.2084  data: 0.0001  max mem: 4604
+Train Epoch: [32] Total time: 0:01:21 (0.3656 s / it)
+Averaged stats: lr: 0.000006  loss: 13.351981
+Train Epoch: [33]  [  0/224]  eta: 2:10:26  lr: 0.000005  loss: 7.5625  time: 34.9417  data: 34.4087  max mem: 4604
+Train Epoch: [33]  [ 50/224]  eta: 0:02:33  lr: 0.000005  loss: 10.6875  time: 0.2014  data: 0.0000  max mem: 4604
+Train Epoch: [33]  [100/224]  eta: 0:01:07  lr: 0.000005  loss: 12.1875  time: 0.2017  data: 0.0000  max mem: 4604
+Train Epoch: [33]  [150/224]  eta: 0:00:31  lr: 0.000005  loss: 9.8750  time: 0.2026  data: 0.0000  max mem: 4604
+Train Epoch: [33]  [200/224]  eta: 0:00:09  lr: 0.000005  loss: 10.8750  time: 0.2048  data: 0.0001  max mem: 4604
+Train Epoch: [33]  [223/224]  eta: 0:00:00  lr: 0.000005  loss: 14.3750  time: 0.2074  data: 0.0000  max mem: 4604
+Train Epoch: [33] Total time: 0:01:21 (0.3659 s / it)
+Averaged stats: lr: 0.000005  loss: 13.318359
+Train Epoch: [34]  [  0/224]  eta: 2:10:17  lr: 0.000005  loss: 16.6250  time: 34.8979  data: 34.4549  max mem: 4604
+Train Epoch: [34]  [ 50/224]  eta: 0:02:33  lr: 0.000005  loss: 13.0000  time: 0.2017  data: 0.0001  max mem: 4604
+Train Epoch: [34]  [100/224]  eta: 0:01:07  lr: 0.000005  loss: 8.1250  time: 0.2025  data: 0.0000  max mem: 4604
+Train Epoch: [34]  [150/224]  eta: 0:00:31  lr: 0.000005  loss: 14.8750  time: 0.2034  data: 0.0000  max mem: 4604
+Train Epoch: [34]  [200/224]  eta: 0:00:09  lr: 0.000005  loss: 7.5938  time: 0.2071  data: 0.0002  max mem: 4604
+Train Epoch: [34]  [223/224]  eta: 0:00:00  lr: 0.000005  loss: 6.8750  time: 0.2045  data: 0.0000  max mem: 4604
+Train Epoch: [34] Total time: 0:01:22 (0.3665 s / it)
+Averaged stats: lr: 0.000005  loss: 13.264788
+Train Epoch: [35]  [  0/224]  eta: 2:10:48  lr: 0.000004  loss: 22.7500  time: 35.0371  data: 34.6031  max mem: 4604
+Train Epoch: [35]  [ 50/224]  eta: 0:02:34  lr: 0.000004  loss: 31.0000  time: 0.2021  data: 0.0001  max mem: 4604
+Train Epoch: [35]  [100/224]  eta: 0:01:07  lr: 0.000004  loss: 13.8125  time: 0.2027  data: 0.0001  max mem: 4604
+Train Epoch: [35]  [150/224]  eta: 0:00:32  lr: 0.000004  loss: 11.7500  time: 0.2029  data: 0.0000  max mem: 4604
+Train Epoch: [35]  [200/224]  eta: 0:00:09  lr: 0.000004  loss: 14.2500  time: 0.2078  data: 0.0000  max mem: 4604
+Train Epoch: [35]  [223/224]  eta: 0:00:00  lr: 0.000004  loss: 9.3750  time: 0.2083  data: 0.0000  max mem: 4604
+Train Epoch: [35] Total time: 0:01:22 (0.3672 s / it)
+Averaged stats: lr: 0.000004  loss: 13.326451
+Train Epoch: [36]  [  0/224]  eta: 2:10:03  lr: 0.000004  loss: 14.1250  time: 34.8351  data: 34.4571  max mem: 4604
+Train Epoch: [36]  [ 50/224]  eta: 0:02:33  lr: 0.000004  loss: 24.7500  time: 0.2020  data: 0.0001  max mem: 4604
+Train Epoch: [36]  [100/224]  eta: 0:01:07  lr: 0.000004  loss: 17.6250  time: 0.2027  data: 0.0001  max mem: 4604
+Train Epoch: [36]  [150/224]  eta: 0:00:31  lr: 0.000004  loss: 5.3438  time: 0.2047  data: 0.0000  max mem: 4604
+Train Epoch: [36]  [200/224]  eta: 0:00:09  lr: 0.000004  loss: 14.8750  time: 0.2087  data: 0.0001  max mem: 4604
+Train Epoch: [36]  [223/224]  eta: 0:00:00  lr: 0.000004  loss: 9.6875  time: 0.2074  data: 0.0000  max mem: 4604
+Train Epoch: [36] Total time: 0:01:22 (0.3662 s / it)
+Averaged stats: lr: 0.000004  loss: 13.336496
+Train Epoch: [37]  [  0/224]  eta: 2:10:06  lr: 0.000003  loss: 8.1250  time: 34.8499  data: 34.4489  max mem: 4604
+Train Epoch: [37]  [ 50/224]  eta: 0:02:33  lr: 0.000003  loss: 10.6250  time: 0.2014  data: 0.0002  max mem: 4604
+Train Epoch: [37]  [100/224]  eta: 0:01:07  lr: 0.000003  loss: 13.6875  time: 0.2021  data: 0.0002  max mem: 4604
+Train Epoch: [37]  [150/224]  eta: 0:00:31  lr: 0.000003  loss: 21.1250  time: 0.2027  data: 0.0001  max mem: 4604
+Train Epoch: [37]  [200/224]  eta: 0:00:09  lr: 0.000003  loss: 10.1875  time: 0.2051  data: 0.0002  max mem: 4604
+Train Epoch: [37]  [223/224]  eta: 0:00:00  lr: 0.000003  loss: 13.8750  time: 0.2071  data: 0.0000  max mem: 4604
+Train Epoch: [37] Total time: 0:01:22 (0.3662 s / it)
+Averaged stats: lr: 0.000003  loss: 13.266044
+Train Epoch: [38]  [  0/224]  eta: 2:11:04  lr: 0.000003  loss: 9.1250  time: 35.1106  data: 34.6016  max mem: 4604
+Train Epoch: [38]  [ 50/224]  eta: 0:02:34  lr: 0.000003  loss: 17.1250  time: 0.2017  data: 0.0002  max mem: 4604
+Train Epoch: [38]  [100/224]  eta: 0:01:07  lr: 0.000003  loss: 12.4375  time: 0.2024  data: 0.0001  max mem: 4604
+Train Epoch: [38]  [150/224]  eta: 0:00:32  lr: 0.000003  loss: 21.0000  time: 0.2031  data: 0.0000  max mem: 4604
+Train Epoch: [38]  [200/224]  eta: 0:00:09  lr: 0.000003  loss: 5.4688  time: 0.2068  data: 0.0001  max mem: 4604
+Train Epoch: [38]  [223/224]  eta: 0:00:00  lr: 0.000003  loss: 6.6250  time: 0.2045  data: 0.0001  max mem: 4604
+Train Epoch: [38] Total time: 0:01:22 (0.3670 s / it)
+Averaged stats: lr: 0.000003  loss: 13.282785
+Train Epoch: [39]  [  0/224]  eta: 2:10:43  lr: 0.000002  loss: 14.0000  time: 35.0162  data: 34.4782  max mem: 4604
+Train Epoch: [39]  [ 50/224]  eta: 0:02:33  lr: 0.000002  loss: 12.7500  time: 0.2023  data: 0.0000  max mem: 4604
+Train Epoch: [39]  [100/224]  eta: 0:01:07  lr: 0.000002  loss: 14.0625  time: 0.2022  data: 0.0001  max mem: 4604
+Train Epoch: [39]  [150/224]  eta: 0:00:32  lr: 0.000002  loss: 17.7500  time: 0.2041  data: 0.0001  max mem: 4604
+Train Epoch: [39]  [200/224]  eta: 0:00:09  lr: 0.000002  loss: 19.5000  time: 0.2051  data: 0.0002  max mem: 4604
+Train Epoch: [39]  [223/224]  eta: 0:00:00  lr: 0.000002  loss: 14.6875  time: 0.2082  data: 0.0001  max mem: 4604
+Train Epoch: [39] Total time: 0:01:22 (0.3670 s / it)
+Averaged stats: lr: 0.000002  loss: 13.307478
+Train Epoch: [40]  [  0/224]  eta: 2:10:22  lr: 0.000002  loss: 19.6250  time: 34.9210  data: 34.4614  max mem: 4604
+Train Epoch: [40]  [ 50/224]  eta: 0:02:33  lr: 0.000002  loss: 12.9375  time: 0.2017  data: 0.0000  max mem: 4604
+Train Epoch: [40]  [100/224]  eta: 0:01:07  lr: 0.000002  loss: 6.5000  time: 0.2026  data: 0.0000  max mem: 4604
+Train Epoch: [40]  [150/224]  eta: 0:00:32  lr: 0.000002  loss: 14.1250  time: 0.2034  data: 0.0002  max mem: 4604
+Train Epoch: [40]  [200/224]  eta: 0:00:09  lr: 0.000002  loss: 5.5938  time: 0.2081  data: 0.0001  max mem: 4604
+Train Epoch: [40]  [223/224]  eta: 0:00:00  lr: 0.000002  loss: 8.7500  time: 0.2079  data: 0.0000  max mem: 4604
+Train Epoch: [40] Total time: 0:01:22 (0.3666 s / it)
+Averaged stats: lr: 0.000002  loss: 13.306641
+Train Epoch: [41]  [  0/224]  eta: 2:11:00  lr: 0.000002  loss: 14.1875  time: 35.0911  data: 34.5761  max mem: 4604
+Train Epoch: [41]  [ 50/224]  eta: 0:02:34  lr: 0.000002  loss: 11.3750  time: 0.2019  data: 0.0001  max mem: 4604
+Train Epoch: [41]  [100/224]  eta: 0:01:07  lr: 0.000002  loss: 15.8125  time: 0.2027  data: 0.0000  max mem: 4604
+Train Epoch: [41]  [150/224]  eta: 0:00:32  lr: 0.000002  loss: 17.7500  time: 0.2036  data: 0.0000  max mem: 4604
+Train Epoch: [41]  [200/224]  eta: 0:00:09  lr: 0.000002  loss: 15.7500  time: 0.2043  data: 0.0001  max mem: 4604
+Train Epoch: [41]  [223/224]  eta: 0:00:00  lr: 0.000002  loss: 33.5000  time: 0.2054  data: 0.0000  max mem: 4604
+Train Epoch: [41] Total time: 0:01:22 (0.3668 s / it)
+Averaged stats: lr: 0.000002  loss: 13.306780
+Train Epoch: [42]  [  0/224]  eta: 2:10:02  lr: 0.000001  loss: 6.9062  time: 34.8306  data: 34.4466  max mem: 4604
+Train Epoch: [42]  [ 50/224]  eta: 0:02:33  lr: 0.000001  loss: 6.5312  time: 0.2014  data: 0.0000  max mem: 4604
+Train Epoch: [42]  [100/224]  eta: 0:01:07  lr: 0.000001  loss: 7.2500  time: 0.2039  data: 0.0001  max mem: 4604
+Train Epoch: [42]  [150/224]  eta: 0:00:31  lr: 0.000001  loss: 17.8750  time: 0.2033  data: 0.0001  max mem: 4604
+Train Epoch: [42]  [200/224]  eta: 0:00:09  lr: 0.000001  loss: 19.6250  time: 0.2097  data: 0.0001  max mem: 4604
+Train Epoch: [42]  [223/224]  eta: 0:00:00  lr: 0.000001  loss: 10.5625  time: 0.2049  data: 0.0000  max mem: 4604
+Train Epoch: [42] Total time: 0:01:22 (0.3662 s / it)
+Averaged stats: lr: 0.000001  loss: 13.316825
+Train Epoch: [43]  [  0/224]  eta: 2:10:49  lr: 0.000001  loss: 9.7500  time: 35.0404  data: 34.4809  max mem: 4604
+Train Epoch: [43]  [ 50/224]  eta: 0:02:34  lr: 0.000001  loss: 16.8750  time: 0.2025  data: 0.0000  max mem: 4604
+Train Epoch: [43]  [100/224]  eta: 0:01:07  lr: 0.000001  loss: 10.1875  time: 0.2026  data: 0.0001  max mem: 4604
+Train Epoch: [43]  [150/224]  eta: 0:00:32  lr: 0.000001  loss: 15.8125  time: 0.2038  data: 0.0000  max mem: 4604
+Train Epoch: [43]  [200/224]  eta: 0:00:09  lr: 0.000001  loss: 13.8125  time: 0.2095  data: 0.0001  max mem: 4604
+Train Epoch: [43]  [223/224]  eta: 0:00:00  lr: 0.000001  loss: 12.0000  time: 0.2052  data: 0.0002  max mem: 4604
+Train Epoch: [43] Total time: 0:01:22 (0.3672 s / it)
+Averaged stats: lr: 0.000001  loss: 13.331334
+Train Epoch: [44]  [  0/224]  eta: 2:10:24  lr: 0.000001  loss: 9.8125  time: 34.9330  data: 34.4225  max mem: 4604
+Train Epoch: [44]  [ 50/224]  eta: 0:02:33  lr: 0.000001  loss: 8.2500  time: 0.2011  data: 0.0001  max mem: 4604
+Train Epoch: [44]  [100/224]  eta: 0:01:07  lr: 0.000001  loss: 7.3438  time: 0.2018  data: 0.0000  max mem: 4604
+Train Epoch: [44]  [150/224]  eta: 0:00:32  lr: 0.000001  loss: 13.4375  time: 0.2042  data: 0.0000  max mem: 4604
+Train Epoch: [44]  [200/224]  eta: 0:00:09  lr: 0.000001  loss: 10.3750  time: 0.2075  data: 0.0002  max mem: 4604
+Train Epoch: [44]  [223/224]  eta: 0:00:00  lr: 0.000001  loss: 21.1250  time: 0.2076  data: 0.0000  max mem: 4604
+Train Epoch: [44] Total time: 0:01:22 (0.3667 s / it)
+Averaged stats: lr: 0.000001  loss: 13.317662
+Train Epoch: [45]  [  0/224]  eta: 2:10:21  lr: 0.000000  loss: 19.8750  time: 34.9158  data: 34.4078  max mem: 4604
+Train Epoch: [45]  [ 50/224]  eta: 0:02:33  lr: 0.000000  loss: 9.1250  time: 0.2019  data: 0.0000  max mem: 4604
+Train Epoch: [45]  [100/224]  eta: 0:01:07  lr: 0.000000  loss: 21.1250  time: 0.2025  data: 0.0001  max mem: 4604
+Train Epoch: [45]  [150/224]  eta: 0:00:32  lr: 0.000000  loss: 20.1250  time: 0.2042  data: 0.0000  max mem: 4604
+Train Epoch: [45]  [200/224]  eta: 0:00:09  lr: 0.000000  loss: 9.6875  time: 0.2079  data: 0.0000  max mem: 4604
+Train Epoch: [45]  [223/224]  eta: 0:00:00  lr: 0.000000  loss: 8.0625  time: 0.2046  data: 0.0000  max mem: 4604
+Train Epoch: [45] Total time: 0:01:22 (0.3664 s / it)
+Averaged stats: lr: 0.000000  loss: 13.335240
+Train Epoch: [46]  [  0/224]  eta: 2:09:54  lr: 0.000000  loss: 10.7500  time: 34.7978  data: 34.3738  max mem: 4604
+Train Epoch: [46]  [ 50/224]  eta: 0:02:33  lr: 0.000000  loss: 8.0000  time: 0.2016  data: 0.0001  max mem: 4604
+Train Epoch: [46]  [100/224]  eta: 0:01:07  lr: 0.000000  loss: 7.8750  time: 0.2031  data: 0.0002  max mem: 4604
+Train Epoch: [46]  [150/224]  eta: 0:00:31  lr: 0.000000  loss: 16.7500  time: 0.2038  data: 0.0000  max mem: 4604
+Train Epoch: [46]  [200/224]  eta: 0:00:09  lr: 0.000000  loss: 11.3750  time: 0.2081  data: 0.0000  max mem: 4604
+Train Epoch: [46]  [223/224]  eta: 0:00:00  lr: 0.000000  loss: 10.0625  time: 0.2049  data: 0.0001  max mem: 4604
+Train Epoch: [46] Total time: 0:01:21 (0.3659 s / it)
+Averaged stats: lr: 0.000000  loss: 13.263114
+Train Epoch: [47]  [  0/224]  eta: 2:10:18  lr: 0.000000  loss: 7.0312  time: 34.9041  data: 34.4348  max mem: 4604
+Train Epoch: [47]  [ 50/224]  eta: 0:02:33  lr: 0.000000  loss: 12.4375  time: 0.2023  data: 0.0001  max mem: 4604
+Train Epoch: [47]  [100/224]  eta: 0:01:07  lr: 0.000000  loss: 9.1250  time: 0.2023  data: 0.0001  max mem: 4604
+Train Epoch: [47]  [150/224]  eta: 0:00:31  lr: 0.000000  loss: 13.8750  time: 0.2037  data: 0.0000  max mem: 4604
+Train Epoch: [47]  [200/224]  eta: 0:00:09  lr: 0.000000  loss: 24.0000  time: 0.2085  data: 0.0001  max mem: 4604
+Train Epoch: [47]  [223/224]  eta: 0:00:00  lr: 0.000000  loss: 12.7500  time: 0.2047  data: 0.0000  max mem: 4604
+Train Epoch: [47] Total time: 0:01:22 (0.3663 s / it)
+Averaged stats: lr: 0.000000  loss: 13.312500
+Train Epoch: [48]  [  0/224]  eta: 2:10:51  lr: 0.000000  loss: 14.6875  time: 35.0497  data: 34.6007  max mem: 4604
+Train Epoch: [48]  [ 50/224]  eta: 0:02:34  lr: 0.000000  loss: 12.8125  time: 0.2015  data: 0.0001  max mem: 4604
+Train Epoch: [48]  [100/224]  eta: 0:01:07  lr: 0.000000  loss: 24.1250  time: 0.2022  data: 0.0001  max mem: 4604
+Train Epoch: [48]  [150/224]  eta: 0:00:32  lr: 0.000000  loss: 11.7500  time: 0.2030  data: 0.0001  max mem: 4604
+Train Epoch: [48]  [200/224]  eta: 0:00:09  lr: 0.000000  loss: 13.0000  time: 0.2049  data: 0.0001  max mem: 4604
+Train Epoch: [48]  [223/224]  eta: 0:00:00  lr: 0.000000  loss: 12.0000  time: 0.2047  data: 0.0001  max mem: 4604
+Train Epoch: [48] Total time: 0:01:22 (0.3667 s / it)
+Averaged stats: lr: 0.000000  loss: 13.352539
+Train Epoch: [49]  [  0/224]  eta: 2:10:45  lr: 0.000000  loss: 18.7500  time: 35.0245  data: 34.4959  max mem: 4604
+Train Epoch: [49]  [ 50/224]  eta: 0:02:33  lr: 0.000000  loss: 11.2500  time: 0.2022  data: 0.0002  max mem: 4604
+Train Epoch: [49]  [100/224]  eta: 0:01:07  lr: 0.000000  loss: 20.1250  time: 0.2057  data: 0.0002  max mem: 4604
+Train Epoch: [49]  [150/224]  eta: 0:00:32  lr: 0.000000  loss: 6.9375  time: 0.2027  data: 0.0000  max mem: 4604
+Train Epoch: [49]  [200/224]  eta: 0:00:09  lr: 0.000000  loss: 7.3438  time: 0.2051  data: 0.0001  max mem: 4604
+Train Epoch: [49]  [223/224]  eta: 0:00:00  lr: 0.000000  loss: 24.1250  time: 0.2079  data: 0.0000  max mem: 4604
+Train Epoch: [49] Total time: 0:01:22 (0.3670 s / it)
+Averaged stats: lr: 0.000000  loss: 13.331473
+Training time 1:09:33
+config:  {'rad': {'train_file': ['/mnt/sda/lpf/data/vqa/data_RAD/trainset.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_RAD/testset.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_RAD/answer_all_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_RAD/images/'}, 'pathvqa': {'train_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_train.json', '/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_PathVQA/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_PathVQA/images/'}, 'slake': {'train_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_train.json', '/mnt/sda/lpf/data/vqa/data_Slake/en/slake_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_Slake/en/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_Slake/imgs/'}, 'med2019': {'train_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_train.json', '/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_valid.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/vqa_med/2019/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/vqa_med/2019/images/'}, 'image_res': 256, 'batch_size_train': 8, 'batch_size_test': 4, 'k_test': 128, 'alpha': 0.4, 'distill': True, 'warm_up': True, 'eos': '[SEP]', 'bert_config': 'configs/config_bert.json', 'init_lr': 2e-05, 'weight_decay': 0.05, 'power_decay': -0.1, 'min_lr': 1e-08, 'max_epoch': 50}
+args:  Namespace(dataset_use='rad', is_save_path=True, checkpoint='./output/2024-06-27_12-44/med_pretrain_rad_v1.pth', output_suffix='/rad_19_1', output_dir='./output/vqa/rad/rad_19_1', evaluate=True, text_encoder='bert-base-uncased', text_decoder='bert-base-uncased', device='cuda', seed=42, world_size=1, dist_url='env://', distributed=False, result_dir='./output/vqa/rad/rad_19_1\\result')
+running
+Creating vqa datasets
+config:  {'rad': {'train_file': ['/mnt/sda/lpf/data/vqa/data_RAD/trainset.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_RAD/testset.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_RAD/answer_all_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_RAD/images/'}, 'pathvqa': {'train_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_train.json', '/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_PathVQA/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_PathVQA/images/'}, 'slake': {'train_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_train.json', '/mnt/sda/lpf/data/vqa/data_Slake/en/slake_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_Slake/en/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_Slake/imgs/'}, 'med2019': {'train_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_train.json', '/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_valid.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/vqa_med/2019/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/vqa_med/2019/images/'}, 'image_res': 256, 'batch_size_train': 8, 'batch_size_test': 4, 'k_test': 128, 'alpha': 0.4, 'distill': True, 'warm_up': True, 'eos': '[SEP]', 'bert_config': 'configs/config_bert.json', 'init_lr': 2e-05, 'weight_decay': 0.05, 'power_decay': -0.1, 'min_lr': 1e-08, 'max_epoch': 50}
+args:  Namespace(dataset_use='rad', is_save_path=True, checkpoint='./output/2024-06-27_12-44/med_pretrain_rad_v1.pth', output_suffix='/rad_19_1', output_dir='./output/vqa/rad/rad_19_1', evaluate=True, text_encoder='bert-base-uncased', text_decoder='bert-base-uncased', device='cuda', seed=42, world_size=1, dist_url='env://', distributed=False, result_dir='./output/vqa/rad/rad_19_1\\result')
+running
+Creating vqa datasets
+loading rad-vqa
+loaded!
+train dataset size:  1793
+test dataset size:  451
+Creating model
+config:  {'rad': {'train_file': ['/mnt/sda/lpf/data/vqa/data_RAD/trainset.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_RAD/testset.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_RAD/answer_all_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_RAD/images/'}, 'pathvqa': {'train_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_train.json', '/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_PathVQA/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_PathVQA/images/'}, 'slake': {'train_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_train.json', '/mnt/sda/lpf/data/vqa/data_Slake/en/slake_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_Slake/en/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_Slake/imgs/'}, 'med2019': {'train_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_train.json', '/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_valid.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/vqa_med/2019/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/vqa_med/2019/images/'}, 'image_res': 256, 'batch_size_train': 8, 'batch_size_test': 4, 'k_test': 128, 'alpha': 0.4, 'distill': True, 'warm_up': True, 'eos': '[SEP]', 'bert_config': 'configs/config_bert.json', 'init_lr': 2e-05, 'weight_decay': 0.05, 'power_decay': -0.1, 'min_lr': 1e-08, 'max_epoch': 50}
+args:  Namespace(dataset_use='rad', is_save_path=True, checkpoint='./output/vqa/rad/rad_19_1/med_pretrain_rad_v1.pth', output_suffix='/rad_19_1', output_dir='./output/vqa/rad/rad_19_1', evaluate=True, text_encoder='bert-base-uncased', text_decoder='bert-base-uncased', device='cuda', seed=42, world_size=1, dist_url='env://', distributed=False, result_dir='./output/vqa/rad/rad_19_1\\result')
+running
+Creating vqa datasets
+loading rad-vqa
+loaded!
+train dataset size:  1793
+test dataset size:  451
+Creating model
+config:  {'rad': {'train_file': ['/mnt/sda/lpf/data/vqa/data_RAD/trainset.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_RAD/testset.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_RAD/answer_all_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_RAD/images/'}, 'pathvqa': {'train_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_train.json', '/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_PathVQA/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_PathVQA/images/'}, 'slake': {'train_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_train.json', '/mnt/sda/lpf/data/vqa/data_Slake/en/slake_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_Slake/en/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_Slake/imgs/'}, 'med2019': {'train_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_train.json', '/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_valid.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/vqa_med/2019/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/vqa_med/2019/images/'}, 'image_res': 256, 'batch_size_train': 8, 'batch_size_test': 4, 'k_test': 128, 'alpha': 0.4, 'distill': True, 'warm_up': True, 'eos': '[SEP]', 'bert_config': 'configs/config_bert.json', 'init_lr': 2e-05, 'weight_decay': 0.05, 'power_decay': -0.1, 'min_lr': 1e-08, 'max_epoch': 50}
+args:  Namespace(dataset_use='rad', is_save_path=True, checkpoint='./output/vqa/rad/rad_19_1/med_pretrain_19_rad_v1.pth', output_suffix='/rad_19_1', output_dir='./output/vqa/rad/rad_19_1', evaluate=True, text_encoder='bert-base-uncased', text_decoder='bert-base-uncased', device='cuda', seed=42, world_size=1, dist_url='env://', distributed=False, result_dir='./output/vqa/rad/rad_19_1\\result')
+running
+Creating vqa datasets
+loading rad-vqa
+loaded!
+train dataset size:  1793
+test dataset size:  451
+Creating model
+load checkpoint from ./output/vqa/rad/rad_19_1/med_pretrain_19_rad_v1.pth
+<All keys matched successfully>
+
+Start training
+
+config:  {'rad': {'train_file': ['/mnt/sda/lpf/data/vqa/data_RAD/trainset.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_RAD/testset.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_RAD/answer_all_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_RAD/images/'}, 'pathvqa': {'train_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_train.json', '/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_PathVQA/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_PathVQA/images/'}, 'slake': {'train_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_train.json', '/mnt/sda/lpf/data/vqa/data_Slake/en/slake_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_Slake/en/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_Slake/imgs/'}, 'med2019': {'train_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_train.json', '/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_valid.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/vqa_med/2019/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/vqa_med/2019/images/'}, 'image_res': 256, 'batch_size_train': 8, 'batch_size_test': 4, 'k_test': 128, 'alpha': 0.4, 'distill': True, 'warm_up': True, 'eos': '[SEP]', 'bert_config': 'configs/config_bert.json', 'init_lr': 2e-05, 'weight_decay': 0.05, 'power_decay': -0.1, 'min_lr': 1e-08, 'max_epoch': 50}
+args:  Namespace(dataset_use='rad', is_save_path=True, checkpoint='./output/vqa/rad/rad_19_1/med_pretrain_19_rad_v1.pth', output_suffix='/rad_19_1', output_dir='./output/vqa/rad/rad_19_1', evaluate=True, text_encoder='bert-base-uncased', text_decoder='bert-base-uncased', device='cuda', seed=42, world_size=1, dist_url='env://', distributed=False, result_dir='./output/vqa/rad/rad_19_1\\result')
+running
+Creating vqa datasets
+loading rad-vqa
+loaded!
+train dataset size:  1793
+test dataset size:  451
+Creating model
+load checkpoint from ./output/vqa/rad/rad_19_1/med_pretrain_19_rad_v1.pth
+<All keys matched successfully>
+
+Start training
+
+Testing ...
+config:  {'rad': {'train_file': ['/mnt/sda/lpf/data/vqa/data_RAD/trainset.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_RAD/testset.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_RAD/answer_all_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_RAD/images/'}, 'pathvqa': {'train_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_train.json', '/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_PathVQA/pathvqa_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_PathVQA/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_PathVQA/images/'}, 'slake': {'train_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_train.json', '/mnt/sda/lpf/data/vqa/data_Slake/en/slake_val.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/data_Slake/en/slake_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/data_Slake/en/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/data_Slake/imgs/'}, 'med2019': {'train_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_train.json', '/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_valid.json'], 'test_file': ['/mnt/sda/lpf/data/vqa/vqa_med/2019/vqa_med_2019_test.json'], 'answer_list': '/mnt/sda/lpf/data/vqa/vqa_med/2019/answer_trainval_list.json', 'vqa_root': '/mnt/sda/lpf/data/vqa/vqa_med/2019/images/'}, 'image_res': 256, 'batch_size_train': 8, 'batch_size_test': 4, 'k_test': 128, 'alpha': 0.4, 'distill': True, 'warm_up': True, 'eos': '[SEP]', 'bert_config': 'configs/config_bert.json', 'init_lr': 2e-05, 'weight_decay': 0.05, 'power_decay': -0.1, 'min_lr': 1e-08, 'max_epoch': 50}
+args:  Namespace(dataset_use='rad', is_save_path=True, checkpoint='./output/vqa/rad/rad_19_1/med_pretrain_19_rad_v1.pth', output_suffix='/rad_19_1', output_dir='./output/vqa/rad/rad_19_1', evaluate=True, text_encoder='bert-base-uncased', text_decoder='bert-base-uncased', device='cuda', seed=42, world_size=1, dist_url='env://', distributed=False, result_dir='./output/vqa/rad/rad_19_1\\result')
+running
+Creating vqa datasets
+loading rad-vqa
+loaded!
+train dataset size:  1793
+test dataset size:  451
+Creating model
+load checkpoint from ./output/vqa/rad/rad_19_1/med_pretrain_19_rad_v1.pth
+<All keys matched successfully>
+
+Start training
+
+Testing ...
+Generate VQA test result:  [  0/113]  eta: 0:45:28    time: 24.1441  data: 23.5065  max mem: 3278
+Generate VQA test result:  [ 50/113]  eta: 0:00:40    time: 0.1798  data: 0.0001  max mem: 3286
+Generate VQA test result:  [100/113]  eta: 0:00:05    time: 0.1825  data: 0.0002  max mem: 3286
+Generate VQA test result:  [112/113]  eta: 0:00:00    time: 0.1828  data: 0.0001  max mem: 3286
+Generate VQA test result: Total time: 0:00:45 (0.4054 s / it)
+result file saved to ./output/vqa/rad/rad_19_1\result\vqa_result.json

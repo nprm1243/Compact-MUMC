@@ -1,0 +1,9 @@
+# Pretrain datasets
+train_file: 'F:/.python/NLP/Datasets/ROCO/train/data.csv'
+image_root: 'F:/.python/NLP/Datasets/ROCO/train/images'
+
+# VQA datasets
+vqa_rad: "flaviagiammarino/vqa-rad"
+slake: "BoKelvin/SLAKE"
+
+image_res: 256

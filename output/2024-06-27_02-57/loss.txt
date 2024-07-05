@@ -1,0 +1,5 @@
+{"train_lr": "0.000009", "train_loss_mlm": "1.557791", "train_loss_ita": "4.593081", "train_loss_itm": "0.214750", "epoch": 0}
+{"train_lr": "0.000090", "train_loss_mlm": "1.954623", "train_loss_ita": "5.412575", "train_loss_itm": "0.282844", "epoch": 1}
+{"train_lr": "0.000081", "train_loss_mlm": "2.229498", "train_loss_ita": "5.688632", "train_loss_itm": "0.280040", "epoch": 2}
+{"train_lr": "0.000073", "train_loss_mlm": "2.295530", "train_loss_ita": "5.655418", "train_loss_itm": "0.269952", "epoch": 3}
+{"train_lr": "0.000066", "train_loss_mlm": "2.342710", "train_loss_ita": "5.703452", "train_loss_itm": "0.259443", "epoch": 4}
